@@ -41,6 +41,9 @@ const App = () => {
         <div ref={cat} className='cat'>
           <h1>Gamify</h1>
           <h5>Gamify your community</h5>
+
+          <i class='fa-solid fa-bars-staggered'></i>
+
           <div className='categories'>
             <ul>
               <li onClick={() => setCategory('popular')}>popular</li>

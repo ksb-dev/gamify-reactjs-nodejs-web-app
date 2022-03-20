@@ -29,6 +29,10 @@
   transition: 0.3s ease;
 }
 
+.image-back .cat i {
+  opacity: 0;
+}
+
 .image-back .cat h1 {
   position: absolute;
   top: 0.5rem;
@@ -103,6 +107,17 @@
   .image-back .cover,
   .image-back .cat {
     height: 50px !important;
+  }
+
+  .image-back .cat i {
+    position: absolute;
+    opacity: 1;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 4;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
   }
 
   .image-back .cat h1 {
