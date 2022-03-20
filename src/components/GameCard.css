@@ -4,6 +4,8 @@
   overflow: hidden;
   background: rgb(31, 31, 31);
   background: linear-gradient(to right, rgb(73, 0, 0), maroon);
+  background: linear-gradient(to left, #a9abb8, #25274d);
+  background: linear-gradient(to left, #254e58, #112d32);
   color: #fff;
   margin: 0.5rem;
   position: relative;
@@ -28,6 +30,8 @@
 .game .name-rating h4 {
   margin: 0;
   background: linear-gradient(to right, rgb(73, 0, 0), maroon);
+  background: linear-gradient(to left, #a9abb8, #25274d);
+  background: linear-gradient(to left, #254e58, #112d32);
   color: #fff;
   height: 50px;
   display: flex;
@@ -35,7 +39,11 @@
   justify-content: center;
   letter-spacing: 2px;
   border-top: 3px solid rgb(73, 0, 0);
+  border-top: 3px solid #25274d;
+  border-top: 3px solid #112d32;
   border-bottom: 3px solid rgb(73, 0, 0);
+  border-bottom: 3px solid #25274d;
+  border-bottom: 3px solid #112d32;
   padding: 0.5rem;
 }
 
@@ -59,7 +67,8 @@
 
 .game .add-more {
   background: linear-gradient(maroon, rgb(73, 0, 0));
-  background: rgba(73, 0, 0, 0.9);
+  background: rgba(37, 39, 77, 0.9);
+  background: rgba(17, 45, 50, 0.9);
   position: absolute;
   top: 0rem;
   width: 100%;
@@ -88,7 +97,7 @@
 
 .game .add-more h3:hover {
   background: greenyellow;
-  color: maroon;
+  color: #112d32;
   border: none;
   padding: 8px 15px;
   transition: color 0.3s ease;

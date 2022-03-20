@@ -7,9 +7,7 @@ import GameCard from '../components/GameCard'
 
 import './Home.css'
 
-const Home = () => {
-  const [category, setCategory] = useState('popular')
-
+const Home = ({ category }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -22,13 +20,13 @@ const Home = () => {
 
   return (
     <>
-      <div className='categories'>
+      {/*<div className='categories'>
         <ul>
           <li onClick={() => setCategory('popular')}>popular</li>
           <li onClick={() => setCategory('upcoming')}>upcoming</li>
           <li onClick={() => setCategory('new')}>new</li>
         </ul>
-      </div>
+  </div>*/}
 
       <div className='game-list'>
         {category === 'popular' && (

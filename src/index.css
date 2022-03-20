@@ -5,6 +5,8 @@ body {
   padding: 0;
   background: crimson;
   background: linear-gradient(to right, maroon, rgb(73, 0, 0));
+  background: linear-gradient(to right, #a9abb8, #25274d);
+  background: linear-gradient(to right, #254e58, #112d32);
   color: #fff;
   font-family: 'Cinzel', serif;
   letter-spacing: 1px;
