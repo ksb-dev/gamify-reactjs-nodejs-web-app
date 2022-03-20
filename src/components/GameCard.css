@@ -1,11 +1,11 @@
 .game {
-  box-shadow: 5px 5px 5px #000;
+  box-shadow: 10px 10px 10px #000;
   text-align: center;
   cursor: pointer;
   overflow: hidden;
   background: rgb(31, 31, 31);
   background: whitesmoke;
-  color: #000;
+  color: maroon;
   margin: 0.5rem;
   position: relative;
 }
@@ -39,7 +39,7 @@
   min-height: 300px;
   height: 100%;
   object-fit: cover;
-  box-shadow: 2px 2px 5px #000;
+  box-shadow: 5px 5px 20px maroon;
 }
 
 .game .add-more {
