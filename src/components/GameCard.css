@@ -53,13 +53,13 @@
 
 .game img {
   width: 100%;
-  min-height: 300px;
-  height: 100%;
+  height: 300px;
   object-fit: cover;
 }
 
 .game .add-more {
   background: linear-gradient(maroon, rgb(73, 0, 0));
+  background: rgba(73, 0, 0, 0.9);
   position: absolute;
   top: 0rem;
   width: 100%;

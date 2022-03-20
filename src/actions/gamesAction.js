@@ -1,17 +1,39 @@
 import axios from 'axios'
 import { popularGamesURL, upcomingGamesURL, newGamesURL } from '../api'
 
-export const loadGames = () => {
+export const loadPopular = () => {
   return async dispatch => {
     const popularData = await axios.get(popularGamesURL())
+
+    dispatch({
+      type: 'FETCH_POPULAR',
+      payload: {
+        popular: popularData.data.results
+      }
+    })
+  }
+}
+
+export const loadUpcoming = () => {
+  return async dispatch => {
     const upcomingData = await axios.get(upcomingGamesURL())
+
+    dispatch({
+      type: 'FETCH_UPCOMING',
+      payload: {
+        upcoming: upcomingData.data.results
+      }
+    })
+  }
+}
+
+export const loadNew = () => {
+  return async dispatch => {
     const newData = await axios.get(newGamesURL())
 
     dispatch({
-      type: 'FETCH_GAMES',
+      type: 'FETCH_NEW',
       payload: {
-        popular: popularData.data.results,
-        upcoming: upcomingData.data.results,
         new: newData.data.results
       }
     })
