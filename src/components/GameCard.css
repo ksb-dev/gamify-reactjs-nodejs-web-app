@@ -3,10 +3,11 @@
   cursor: pointer;
   overflow: hidden;
   background: rgb(31, 31, 31);
-  background: linear-gradient(#000, maroon);
+  background: linear-gradient(to right, #000, maroon);
   color: #fff;
   margin: 0.5rem;
   position: relative;
+  box-shadow: 5px 5px 5px #000;
 }
 
 .game .name-rating {
@@ -26,7 +27,7 @@
 
 .game .name-rating h4 {
   margin: 0;
-  background: maroon;
+  background: linear-gradient(to left, #000, maroon);
   color: #fff;
   height: 50px;
   display: flex;
@@ -38,6 +39,8 @@
 .game .name-rating h5 {
   margin-top: 0.5rem;
   margin-bottom: 0;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 
 .game .image {
@@ -96,7 +99,7 @@
 .green {
   /*background: green;
   color: #fff;*/
-  color: green;
+  color: greenyellow;
 }
 
 .orange {
@@ -164,5 +167,13 @@
   .game .name-rating h5 {
     font-size: 0.5rem;
     margin-top: 0rem;
+  }
+
+  .game .add-more h1 {
+    font-size: 1.2rem;
+  }
+
+  .game .add-more h3 {
+    font-size: 0.6rem;
   }
 }

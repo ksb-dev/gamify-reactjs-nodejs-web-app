@@ -5,7 +5,7 @@ body {
   padding: 0;
   background: rgb(65, 65, 65);
   background: maroon;
-  background: linear-gradient(maroon, whitesmoke);
+  background: linear-gradient(to right, maroon, #000);
   color: #fff;
   font-family: 'Cinzel', serif;
   letter-spacing: 1px;
