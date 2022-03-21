@@ -5,10 +5,18 @@ import joy from './img/joy8.jpg'
 
 import SideMenu from './components/SideMenu/SideMenu'
 
+import { useDispatch } from 'react-redux'
+
+import { loadSearched } from './actions/gamesAction'
+
 import './App.css'
 
 const App = () => {
   const [category, setCategory] = useState('popular')
+  const [query, setQuery] = useState('')
+  const [typed, setTyped] = useState('')
+
+  const dispatch = useDispatch()
 
   const img = useRef(null)
   const cover = useRef(null)
@@ -44,7 +52,7 @@ const App = () => {
     sideMenu.current.style.transform = 'translateX(0%)'
   }
 
-  const handleClick = value => {
+  const handleClick = (value, typed) => {
     window.scroll({
       top: 0,
       left: 0,
@@ -54,6 +62,10 @@ const App = () => {
     if (value === 'popular') setCategory('popular')
     if (value === 'upcoming') setCategory('upcoming')
     if (value === 'new') setCategory('new')
+    if (value === 'searched') {
+      setCategory('searched')
+      setTyped(typed)
+    }
   }
 
   return (
@@ -68,9 +80,22 @@ const App = () => {
 
           <div ref={cat} className='cat'>
             <div className='name-search'>
-              <h1>Gamify</h1>
-              <form>
-                <input type='text' placeholder='Gamify here' />
+              <h1 onClick={() => handleClick('popular')}>Gamify</h1>
+
+              <form
+                onSubmit={e => {
+                  e.preventDefault()
+                  dispatch(loadSearched(query))
+                  handleClick('searched', query)
+                  setQuery('')
+                }}
+              >
+                <input
+                  type='text'
+                  placeholder='Gamify here'
+                  value={query}
+                  onChange={e => setQuery(e.target.value)}
+                />
               </form>
             </div>
 
@@ -88,7 +113,7 @@ const App = () => {
 
         {/* Home */}
 
-        <Home category={category} />
+        <Home category={category} typed={typed} />
 
         <SideMenu setCategory={setCategory} sideMenu={sideMenu} />
       </div>

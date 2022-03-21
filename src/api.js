@@ -31,7 +31,7 @@ const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`
 
 const popular_games = `games?key=${process.env.REACT_APP_GAME_API_KEY}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=20`
 const upcoming_games = `games?key=${process.env.REACT_APP_GAME_API_KEY}&dates=${currentDate},${nextYear}&ordering=-added&page_size=20`
-const newGames = `games?key=${process.env.REACT_APP_GAME_API_KEY}&dates=${lastYear},${currentDate}&ordering=-created&page_size=20`
+const newGames = `games?key=${process.env.REACT_APP_GAME_API_KEY}&dates=${lastYear},${currentDate}&ordering=-released&page_size=20`
 
 export const popularGamesURL = () => `${base_url}${popular_games}`
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`
@@ -46,4 +46,4 @@ export const gameScreenshotURL = game_id =>
 
 //Searched game
 export const searchGameURL = game_name =>
-  `${base_url}games?key=${process.env.REACT_APP_GAME_API_KEY}&search=${game_name}&page_size=9`
+  `${base_url}games?key=${process.env.REACT_APP_GAME_API_KEY}&search=${game_name}`

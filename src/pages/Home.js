@@ -7,7 +7,7 @@ import GameCard from '../components/GameCard/GameCard'
 
 import './Home.css'
 
-const Home = ({ category }) => {
+const Home = ({ category, typed }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -16,11 +16,9 @@ const Home = ({ category }) => {
     dispatch(loadUpcoming())
   }, [dispatch])
 
-  const { popular, upcoming, newGames, loading } = useSelector(
+  const { popular, upcoming, newGames, loading, searched } = useSelector(
     state => state.games
   )
-
-  console.log(loading)
 
   return (
     <>
@@ -79,6 +77,29 @@ const Home = ({ category }) => {
 
             <div className='games'>
               {upcoming.map(game => {
+                return (
+                  <GameCard
+                    key={game.id}
+                    name={game.name}
+                    released={game.released}
+                    id={game.id}
+                    image={game.background_image}
+                    rating={game.rating}
+                  />
+                )
+              })}
+            </div>
+          </>
+        )}
+
+        {!loading && category === 'searched' && (
+          <>
+            <h2>
+              Search results for <span>" {typed} "</span>
+            </h2>
+
+            <div className='games'>
+              {searched.map(game => {
                 return (
                   <GameCard
                     key={game.id}

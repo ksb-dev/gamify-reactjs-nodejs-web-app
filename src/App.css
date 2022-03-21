@@ -67,6 +67,14 @@
   padding: 0.4rem;
 }
 
+.header .cat .name-search form input:focus {
+  outline: none;
+}
+
+.header .cat .name-search form input:focus::placeholder {
+  color: transparent;
+}
+
 ::placeholder {
   font-family: 'Cinzel Decorative', cursive;
   letter-spacing: 1px;

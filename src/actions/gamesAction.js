@@ -1,5 +1,10 @@
 import axios from 'axios'
-import { popularGamesURL, upcomingGamesURL, newGamesURL } from '../api'
+import {
+  popularGamesURL,
+  upcomingGamesURL,
+  newGamesURL,
+  searchGameURL
+} from '../api'
 
 export const loadPopular = () => {
   return async dispatch => {
@@ -33,6 +38,19 @@ export const loadNew = () => {
 
     dispatch({
       type: 'FETCH_NEW',
+      payload: {
+        new: newData.data.results
+      }
+    })
+  }
+}
+
+export const loadSearched = query => {
+  return async dispatch => {
+    const newData = await axios.get(searchGameURL(query))
+
+    dispatch({
+      type: 'FETCH_SEARCHED',
       payload: {
         new: newData.data.results
       }
