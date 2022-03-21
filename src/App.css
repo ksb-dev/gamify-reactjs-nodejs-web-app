@@ -24,6 +24,7 @@
   background: linear-gradient(to right, rgba(37, 39, 77, 0.3), #a9abb8);
   background: linear-gradient(to left, #254e58, rgba(17, 45, 50, 0.3));
   background: linear-gradient(to left, #5a5560, rgba(70, 52, 78, 0.3));
+  background: linear-gradient(to left, #49274a, rgba(14, 10, 24, 0.3));
   z-index: 2;
   width: 100vw;
   height: 200px;

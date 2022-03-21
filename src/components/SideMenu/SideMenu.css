@@ -1,5 +1,5 @@
 .sideMenu {
-  background: rgba(70, 52, 78, 0.9);
+  background: rgba(14, 10, 24, 0.9);
   position: fixed;
   top: 0;
   width: 100vw;
@@ -10,7 +10,8 @@
 }
 
 .sideMenu .menu {
-  background: #5a5560;
+  background: #49274a;
+  background: linear-gradient(to right, #49274a, #0e0a18);
   position: fixed;
   right: 0;
   top: 0;
