@@ -57,6 +57,7 @@
   margin: 0rem 1rem 0rem 0rem;
   color: #0e0b16;
   animation: animate 5s linear infinite;
+  text-shadow: 0 0 20px #fff;
 }
 
 @keyframes animate {
@@ -132,11 +133,15 @@
   letter-spacing: 3px;
   cursor: pointer;
   font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  text-shadow: 0 0 20px #fff;
 }
 
 .header .cat .categories ul li:hover {
-  padding-bottom: 0.2rem;
-  border-bottom: 5px solid #fff;
+  /*padding-bottom: 0.2rem;
+  border-bottom: 5px solid #fff;*/
+  box-shadow: 0 0 10px #fff;
   transition: all 0.3s ease;
 }
 

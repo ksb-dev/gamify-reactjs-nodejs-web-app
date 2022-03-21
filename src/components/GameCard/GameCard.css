@@ -10,9 +10,9 @@
   background: linear-gradient(to left, #49274a, #0e0a18);
   background: linear-gradient(to left, #1a2930, #0e0b16);
   color: #fff;
-  margin: 0.5rem;
-  margin-top: 0;
+  margin: 1rem;
   position: relative;
+  box-shadow: 0px 0px 10px #fff;
 }
 
 .game .name-rating {
