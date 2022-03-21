@@ -10,7 +10,7 @@
 }
 
 .side-menu .menu {
-  background: #0e0b16;
+  background: linear-gradient(to right, rgba(26, 41, 48, 0), #0e0b16);
   position: fixed;
   right: 0;
   top: 0;
