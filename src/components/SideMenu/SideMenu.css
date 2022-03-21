@@ -31,9 +31,12 @@
 .side-menu .menu ul li {
   cursor: pointer;
   list-style: none;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   font-weight: bold;
   letter-spacing: 2px;
+  text-shadow: 0 0 20px #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
 }
 
 .side-menu .menu ul li i {
@@ -46,7 +49,9 @@
 }
 
 .side-menu .menu ul .list:hover {
-  padding-right: 0.5rem;
+  /*padding-right: 0.5rem;
   border-right: 5px solid #fff;
+  transition: all 0.3s ease;*/
+  box-shadow: 0 0 10px #fff;
   transition: all 0.3s ease;
 }
