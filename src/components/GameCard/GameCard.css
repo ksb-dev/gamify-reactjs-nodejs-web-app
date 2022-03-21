@@ -8,6 +8,7 @@
   background: linear-gradient(to left, #254e58, #112d32);
   background: linear-gradient(to left, #5a5560, #46344e);
   background: linear-gradient(to left, #49274a, #0e0a18);
+  background: linear-gradient(to left, #1a2930, #0a1612);
   color: #fff;
   margin: 0.5rem;
   margin-top: 0;
@@ -37,6 +38,7 @@
   background: linear-gradient(to left, #254e58, #112d32);
   background: linear-gradient(to left, #5a5560, #46344e);
   background: linear-gradient(to left, #49274a, #0e0a18);
+  background: linear-gradient(to left, #1a2930, #0a1612);
   color: #fff;
   height: 50px;
   display: flex;
@@ -48,11 +50,13 @@
   border-top: 3px solid #112d32;
   border-top: 3px solid #46344e;
   border-top: 3px solid #0e0a18;
+  border-top: 3px solid #0a1612;
   border-bottom: 3px solid rgb(73, 0, 0);
   border-bottom: 3px solid #25274d;
   border-bottom: 3px solid #112d32;
   border-bottom: 3px solid #46344e;
   border-bottom: 3px solid #0e0a18;
+  border-bottom: 3px solid #0a1612;
   padding: 0.5rem;
 }
 
@@ -80,6 +84,7 @@
   background: rgba(17, 45, 50, 0.9);
   background: rgba(70, 52, 78, 0.9);
   background: rgb(14, 10, 24, 0.9);
+  background: linear-gradient(#1a2930, #0a1612);
   position: absolute;
   top: 0rem;
   width: 100%;

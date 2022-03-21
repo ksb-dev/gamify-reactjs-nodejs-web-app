@@ -19,6 +19,12 @@ const App = () => {
     scrollFunction()
   }
 
+  window.onresize = () => {
+    if (window.innerWidth > 1025) {
+      sideMenu.current.style.transform = 'translateX(100%)'
+    }
+  }
+
   const scrollFunction = () => {
     if (
       document.body.scrollTop > 50 ||
@@ -36,6 +42,18 @@ const App = () => {
 
   const show = () => {
     sideMenu.current.style.transform = 'translateX(0%)'
+  }
+
+  const handleClick = value => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+
+    if (value === 'popular') setCategory('popular')
+    if (value === 'upcoming') setCategory('upcoming')
+    if (value === 'new') setCategory('new')
   }
 
   return (
@@ -60,9 +78,9 @@ const App = () => {
 
             <div className='categories'>
               <ul>
-                <li onClick={() => setCategory('popular')}>popular</li>
-                <li onClick={() => setCategory('upcoming')}>upcoming</li>
-                <li onClick={() => setCategory('new')}>new</li>
+                <li onClick={() => handleClick('popular')}>popular</li>
+                <li onClick={() => handleClick('upcoming')}>upcoming</li>
+                <li onClick={() => handleClick('new')}>new</li>
               </ul>
             </div>
           </div>

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
 
 body {
   margin: 0;
@@ -9,8 +11,11 @@ body {
   background: linear-gradient(to right, #254e58, #112d32);
   background: linear-gradient(to right, #5a5560, #46344e);
   background: linear-gradient(to right, #49274a, #0e0a18);
+  background: linear-gradient(to right, #1a2930, #0a1612);
   color: #fff;
   font-family: 'Cinzel', serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cinzel Decorative', cursive;
   letter-spacing: 1px;
 }
 
@@ -32,14 +37,14 @@ body {
 }
 .loader:before {
   animation: ball1 1s infinite;
-  background-color: #cb2025;
-  box-shadow: 30px 0 0 #f8b334;
+  background-color: #0e0a18;
+  box-shadow: 30px 0 0 #0e0a18;
   margin-bottom: 10px;
 }
 .loader:after {
   animation: ball2 1s infinite;
-  background-color: #00a096;
-  box-shadow: 30px 0 0 #97bf0d;
+  background-color: #0e0a18;
+  box-shadow: 30px 0 0 #0e0a18;
 }
 
 @keyframes rotate {
@@ -59,32 +64,32 @@ body {
 
 @keyframes ball1 {
   0% {
-    box-shadow: 30px 0 0 #f8b334;
+    box-shadow: 30px 0 0 #0e0a18;
   }
   50% {
-    box-shadow: 0 0 0 #f8b334;
+    box-shadow: 0 0 0 #0e0a18;
     margin-bottom: 0;
     -webkit-transform: translate(15px, 15px);
     -moz-transform: translate(15px, 15px);
   }
   100% {
-    box-shadow: 30px 0 0 #f8b334;
+    box-shadow: 30px 0 0 #0e0a18;
     margin-bottom: 10px;
   }
 }
 
 @keyframes ball2 {
   0% {
-    box-shadow: 30px 0 0 #97bf0d;
+    box-shadow: 30px 0 0 #0e0a18;
   }
   50% {
-    box-shadow: 0 0 0 #97bf0d;
+    box-shadow: 0 0 0 #0e0a18;
     margin-top: -20px;
     -webkit-transform: translate(15px, 15px);
     -moz-transform: translate(15px, 15px);
   }
   100% {
-    box-shadow: 30px 0 0 #97bf0d;
+    box-shadow: 30px 0 0 #0e0a18;
     margin-top: 0;
   }
 }
