@@ -20,14 +20,6 @@ const Home = ({ category }) => {
 
   return (
     <>
-      {/*<div className='categories'>
-        <ul>
-          <li onClick={() => setCategory('popular')}>popular</li>
-          <li onClick={() => setCategory('upcoming')}>upcoming</li>
-          <li onClick={() => setCategory('new')}>new</li>
-        </ul>
-  </div>*/}
-
       <div className='game-list'>
         {category === 'popular' && (
           <>

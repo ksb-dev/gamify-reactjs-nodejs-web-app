@@ -1,3 +1,7 @@
+.image-back {
+  max-width: 1280px;
+}
+
 .image-back img {
   position: fixed;
   top: 0;
@@ -5,7 +9,7 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: 0.3s ease;
+  transition: height 0.3s ease;
 }
 
 .image-back .cover {
@@ -18,7 +22,7 @@
   width: 100vw;
   height: 200px;
   top: 0;
-  transition: 0.3s ease;
+  transition: height 0.3s ease;
 }
 
 .image-back .cat {
@@ -26,32 +30,39 @@
   z-index: 3;
   width: 100vw;
   height: 200px;
-  transition: 0.3s ease;
+  transition: height 0.3s ease;
 }
 
 .image-back .cat i {
   opacity: 0;
 }
 
-.image-back .cat h1 {
-  position: absolute;
-  top: 0.5rem;
-  left: 5rem;
-  letter-spacing: 5px;
-  margin: 0;
-  cursor: pointer;
+.image-back .cat .name-search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.3rem 0rem 0rem 1rem;
 }
 
-.image-back .cat h1:hover {
+.image-back .cat .name-search h1 {
+  cursor: pointer;
+  margin: 0rem 1rem 0rem 0rem;
+}
+
+.image-back .cat .name-search h1:hover {
   transform: rotate(-3deg);
   transition: all 0.3s ease;
 }
 
-.image-back .cat h5 {
-  position: absolute;
-  top: 1.5rem;
-  left: 5rem;
-  letter-spacing: 5px;
+.image-back .cat .name-search form input {
+  width: 300px;
+  padding: 0.4rem;
+}
+
+::placeholder {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 
 .image-back .cat .categories {
@@ -65,40 +76,43 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  margin: 0rem 0rem 0.8rem 0rem;
 }
 
 .image-back .cat .categories ul li {
   list-style: none;
   margin: 0rem 1rem;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   cursor: pointer;
   font-weight: bold;
 }
 
 .image-back .cat .categories ul li:hover {
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
   border-bottom: 5px solid #fff;
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 786px) {
-  .image-back .cat h1,
-  .image-back .cat h5 {
-    left: 1rem;
-  }
-
-  .image-back .cat h5 {
-    font-size: 0.8rem;
-  }
-
+@media screen and (max-width: 1024px) {
   .image-back .cat .categories {
-    position: absolute;
-    right: 1rem;
+    display: none;
   }
 
-  .image-back .cat .categories ul li {
-    font-size: 0.8rem;
-    margin: 0rem 0.5rem;
+  .image-back .cat i {
+    position: absolute;
+    opacity: 1;
+    bottom: 0.8rem;
+    right: 2rem;
+    z-index: 4;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .image-back .cat .name-search h1 {
+    left: 1rem;
   }
 }
 
@@ -106,32 +120,29 @@
   .image-back img,
   .image-back .cover,
   .image-back .cat {
-    height: 50px !important;
+    height: 45px !important;
   }
 
   .image-back .cat i {
-    position: absolute;
-    opacity: 1;
-    top: 1rem;
-    right: 1.5rem;
-    z-index: 4;
-    color: #fff;
-    font-size: 1.4rem;
-    cursor: pointer;
+    right: 1rem;
   }
 
-  .image-back .cat h1 {
-    font-size: 1rem;
+  .image-back .cat .name-search {
+    margin: 0.3rem 0rem 0rem 1rem;
+  }
+
+  .image-back .cat .name-search h1 {
+    font-size: 1.5rem;
     letter-spacing: 0;
+    top: 0.6rem;
   }
 
-  .image-back .cat h5 {
+  .image-back .cat .name-search form input {
+    width: 150px;
+    padding: 0.2rem;
+  }
+
+  ::placeholder {
     font-size: 0.6rem;
-    top: 1rem;
-    letter-spacing: 1px;
-  }
-
-  .image-back .cat .categories {
-    display: none;
   }
 }

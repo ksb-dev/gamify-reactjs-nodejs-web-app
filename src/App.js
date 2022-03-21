@@ -21,9 +21,9 @@ const App = () => {
       document.body.scrollTop > 50 ||
       document.documentElement.scrollTop > 50
     ) {
-      img.current.style.height = '70px'
-      cover.current.style.height = '70px'
-      cat.current.style.height = '70px'
+      img.current.style.height = '50px'
+      cover.current.style.height = '50px'
+      cat.current.style.height = '50px'
     } else {
       img.current.style.height = '200px'
       cover.current.style.height = '200px'
@@ -39,10 +39,14 @@ const App = () => {
         <div ref={cover} className='cover'></div>
 
         <div ref={cat} className='cat'>
-          <h1>Gamify</h1>
-          <h5>Gamify your community</h5>
+          <div className='name-search'>
+            <h1>Gamify</h1>
+            <form>
+              <input type='text' placeholder='Gamify here' />
+            </form>
+          </div>
 
-          <i class='fa-solid fa-bars-staggered'></i>
+          <i className='fa-solid fa-bars-staggered'></i>
 
           <div className='categories'>
             <ul>
