@@ -1,5 +1,5 @@
 .side-menu {
-  background: rgba(10, 22, 18, 0.9);
+  background: rgba(14, 11, 22, 0.95);
   position: fixed;
   top: 0;
   width: 100vw;
@@ -10,7 +10,7 @@
 }
 
 .side-menu .menu {
-  background: #0a1612;
+  background: #0e0b16;
   position: fixed;
   right: 0;
   top: 0;
