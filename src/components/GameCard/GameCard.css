@@ -86,6 +86,7 @@
   background: rgba(70, 52, 78, 0.9);
   background: rgb(14, 10, 24, 0.9);
   background: linear-gradient(#1a2930, #0e0b16);
+  background: linear-gradient(rgba(26, 41, 48, 0.95), #0e0b16);
   position: absolute;
   top: 0rem;
   width: 100%;
