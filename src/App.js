@@ -3,6 +3,8 @@ import React, { useState, useRef } from 'react'
 import Home from './pages/Home'
 import joy from './img/joy8.jpg'
 
+import SideMenu from './components/SideMenu/SideMenu'
+
 import './App.css'
 
 const App = () => {
@@ -11,6 +13,7 @@ const App = () => {
   const img = useRef(null)
   const cover = useRef(null)
   const cat = useRef(null)
+  const sideMenu = useRef(null)
 
   window.onscroll = () => {
     scrollFunction()
@@ -31,34 +34,47 @@ const App = () => {
     }
   }
 
+  const show = () => {
+    sideMenu.current.style.transform = 'translateX(0%)'
+  }
+
   return (
-    <div className='home'>
-      <div className='image-back'>
-        <img ref={img} src={joy} alt='' />
+    <>
+      <div className='home'>
+        {/*Header */}
 
-        <div ref={cover} className='cover'></div>
+        <div className='header'>
+          <img ref={img} src={joy} alt='' />
 
-        <div ref={cat} className='cat'>
-          <div className='name-search'>
-            <h1>Gamify</h1>
-            <form>
-              <input type='text' placeholder='Gamify here' />
-            </form>
-          </div>
+          <div ref={cover} className='cover'></div>
 
-          <i className='fa-solid fa-bars-staggered'></i>
+          <div ref={cat} className='cat'>
+            <div className='name-search'>
+              <h1>Gamify</h1>
+              <form>
+                <input type='text' placeholder='Gamify here' />
+              </form>
+            </div>
 
-          <div className='categories'>
-            <ul>
-              <li onClick={() => setCategory('popular')}>popular</li>
-              <li onClick={() => setCategory('upcoming')}>upcoming</li>
-              <li onClick={() => setCategory('new')}>new</li>
-            </ul>
+            <i className='fa-solid fa-bars-staggered' onClick={show}></i>
+
+            <div className='categories'>
+              <ul>
+                <li onClick={() => setCategory('popular')}>popular</li>
+                <li onClick={() => setCategory('upcoming')}>upcoming</li>
+                <li onClick={() => setCategory('new')}>new</li>
+              </ul>
+            </div>
           </div>
         </div>
+
+        {/* Home */}
+
+        <Home category={category} />
+
+        <SideMenu setCategory={setCategory} sideMenu={sideMenu} />
       </div>
-      <Home category={category} />
-    </div>
+    </>
   )
 }
 

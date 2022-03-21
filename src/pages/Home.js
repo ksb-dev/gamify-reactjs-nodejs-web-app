@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { loadPopular, loadNew, loadUpcoming } from '../actions/gamesAction'
 
-import GameCard from '../components/GameCard'
+import GameCard from '../components/GameCard/GameCard'
 
 import './Home.css'
 
@@ -16,12 +16,22 @@ const Home = ({ category }) => {
     dispatch(loadUpcoming())
   }, [dispatch])
 
-  const { popular, upcoming, newGames } = useSelector(state => state.games)
+  const { popular, upcoming, newGames, loading } = useSelector(
+    state => state.games
+  )
+
+  console.log(loading)
 
   return (
     <>
       <div className='game-list'>
-        {category === 'popular' && (
+        {loading && (
+          <div className='loading'>
+            <div className='loader'></div>
+          </div>
+        )}
+
+        {!loading && category === 'popular' && (
           <>
             <h2>Popular Games</h2>
 
@@ -42,7 +52,7 @@ const Home = ({ category }) => {
           </>
         )}
 
-        {category === 'new' && (
+        {!loading && category === 'new' && (
           <>
             <h2>New Games</h2>
 
@@ -63,7 +73,7 @@ const Home = ({ category }) => {
           </>
         )}
 
-        {category === 'upcoming' && (
+        {!loading && category === 'upcoming' && (
           <>
             <h2>Upcoming Games</h2>
 
