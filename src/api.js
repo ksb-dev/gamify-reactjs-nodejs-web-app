@@ -38,11 +38,12 @@ export const upcomingGamesURL = () => `${base_url}${upcoming_games}`
 export const newGamesURL = () => `${base_url}${newGames}`
 
 //GAME DETAILS
-export const gameDetailsURL = game_id => `${base_url}games/${game_id}`
+export const gameDetailsURL = game_id =>
+  `${base_url}games/${game_id}?key=${process.env.REACT_APP_GAME_API_KEY}`
 
 //Game ScreenShots
 export const gameScreenshotURL = game_id =>
-  `${base_url}games/${game_id}/screenshots`
+  `${base_url}games/${game_id}/screenshots?key=${process.env.REACT_APP_GAME_API_KEY}`
 
 //Searched game
 export const searchGameURL = game_name =>

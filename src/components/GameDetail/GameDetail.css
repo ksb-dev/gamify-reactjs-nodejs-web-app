@@ -1,0 +1,72 @@
+.shadow {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.shadow .detail {
+  width: 80%;
+  border-radius: 1rem;
+  padding: 2rem 5rem;
+  background: white;
+  position: absolute;
+  left: 10%;
+  color: black;
+  z-index: 10;
+}
+
+.shadow .detail img {
+  width: 100%;
+}
+
+.shadow .detail .stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shadow .detail .stats img {
+  width: 2rem;
+  height: 2rem;
+  display: inline;
+}
+
+.shadow .detail .stats .info {
+  text-align: center;
+}
+
+.shadow .detail .stats .info .platforms {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.shadow .detail .stats .info .platforms img {
+  margin-left: 3rem;
+}
+
+.shadow .detail .media {
+  margin-top: 5rem;
+}
+
+.shadow .detail .media img {
+  width: 100%;
+}
+
+.shadow .detail .description {
+  margin: 5rem 0rem;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: tomato;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}

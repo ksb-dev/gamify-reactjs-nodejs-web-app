@@ -1,13 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
+// Redux
 import { useDispatch, useSelector } from 'react-redux'
+
+// Actions
 import { loadPopular, loadNew, loadUpcoming } from '../actions/gamesAction'
 
+// Components
 import GameCard from '../components/GameCard/GameCard'
+import Header from '../components/Header/Header'
+import SideMenu from '../components/SideMenu/SideMenu'
+import GameDetail from '../components/GameDetail/GameDetail'
 
 import './Home.css'
 
-const Home = ({ category, typed }) => {
+const Home = () => {
+  const [category, setCategory] = useState('popular')
+  const [query, setQuery] = useState('')
+  const [typed, setTyped] = useState('')
+
+  const sideMenu = useRef(null)
+
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -22,6 +35,16 @@ const Home = ({ category, typed }) => {
 
   return (
     <>
+      <Header
+        setCategory={setCategory}
+        query={query}
+        setQuery={setQuery}
+        setTyped={setTyped}
+        sideMenu={sideMenu}
+      />
+
+      <SideMenu setCategory={setCategory} sideMenu={sideMenu} />
+
       <div className='game-list'>
         {loading && (
           <div className='loading'>

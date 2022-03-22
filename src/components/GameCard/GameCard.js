@@ -1,9 +1,18 @@
 import React, { useRef } from 'react'
 
+// Styles
 import './GameCard.css'
+
+// Redux
+import { useDispatch } from 'react-redux'
+
+// Actions
+import { loadDetail } from '../../actions/detailAction'
 
 const GameCard = ({ name, released, id, image, rating }) => {
   const addMore = useRef(null)
+
+  const dispatch = useDispatch()
 
   const show = () => {
     addMore.current.style.transform = 'translateY(0%)'
@@ -17,6 +26,10 @@ const GameCard = ({ name, released, id, image, rating }) => {
     if (rating > 4) return 'green'
     else if (rating > 3) return 'orange'
     else return 'red'
+  }
+
+  const handleDetail = () => {
+    dispatch(loadDetail(id))
   }
 
   return (
@@ -38,7 +51,7 @@ const GameCard = ({ name, released, id, image, rating }) => {
         <h1>
           <i className='fa-solid fa-circle-info fa-1x'></i>
         </h1>
-        <h3>
+        <h3 onClick={handleDetail}>
           <i className='fa-solid fa-plus'></i>Wishlist
         </h3>
       </div>

@@ -16,7 +16,7 @@
   top: 0;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .side-menu .menu ul {
@@ -25,13 +25,13 @@
   align-items: flex-end;
   justify-content: flex-end;
   width: 150px;
-  padding-right: 2rem;
+  margin-right: 2rem;
 }
 
 .side-menu .menu ul li {
   cursor: pointer;
   list-style: none;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   font-weight: bold;
   letter-spacing: 2px;
   text-shadow: 0 0 20px #fff;
@@ -43,15 +43,31 @@
   color: #fff;
 }
 
-.side-menu .menu ul .close:hover {
-  transform: rotate(360deg);
-  transition: transform 0.3s ease;
-}
-
-.side-menu .menu ul .list:hover {
+.side-menu .menu ul li:hover {
   /*padding-right: 0.5rem;
   border-right: 5px solid #fff;
   transition: all 0.3s ease;*/
   box-shadow: 0 0 10px #fff;
   transition: all 0.3s ease;
+}
+
+.side-menu .menu ul .wish {
+  color: tomato;
+  text-shadow: 0 0 20px tomato;
+}
+
+.side-menu .menu ul .wish:hover {
+  box-shadow: 0 0 10px tomato;
+  transition: all 0.3s ease;
+}
+
+.side-menu .menu ul .close:hover {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 640px) {
+  .side-menu .menu ul {
+    margin-right: 1rem;
+  }
 }

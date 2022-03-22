@@ -40,9 +40,10 @@ const gamesReducer = (state = initialState, action) => {
 
       return {
         ...state,
-        searched: action.payload.new,
+        searched: action.payload.searched,
         loading: false
       }
+
     default:
       return { ...state }
   }

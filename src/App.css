@@ -131,7 +131,7 @@
 .header .cat .categories ul li {
   list-style: none;
   margin: 0rem 0.5rem;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   cursor: pointer;
   font-weight: bold;
   padding: 0.2rem 0.5rem;
@@ -143,6 +143,16 @@
   /*padding-bottom: 0.2rem;
   border-bottom: 5px solid #fff;*/
   box-shadow: 0 0 10px #fff;
+  transition: all 0.3s ease;
+}
+
+.header .cat .categories ul li:first-child {
+  color: tomato;
+  text-shadow: 0 0 20px tomato;
+}
+
+.header .cat .categories ul li:first-child:hover {
+  box-shadow: 0 0 10px tomato;
   transition: all 0.3s ease;
 }
 
