@@ -45,13 +45,13 @@ const GameDetail = ({ pathId }) => {
         return 'fa-brands fa-steam'
 
       case 'Nintendo Switch':
-        return 'fa-solid fa-tablet'
+        return 'fa-solid fa-mobile-screen-button'
 
       case 'iOS':
         return 'fa-brands fa-apple'
 
       default:
-        return ''
+        return 'fa-solid fa-gamepad'
     }
   }
 
@@ -61,6 +61,12 @@ const GameDetail = ({ pathId }) => {
   const { searched } = useSelector(state => state.games)
 
   const getByRating = rating => {
+    if (rating > 4) return 'green'
+    else if (rating > 3) return 'orange'
+    else return 'red'
+  }
+
+  const getByRatingId = rating => {
     if (rating > 4) return 'green'
     else if (rating > 3) return 'orange'
     else return 'red'
@@ -120,7 +126,10 @@ const GameDetail = ({ pathId }) => {
                   {game.platforms.map(data => {
                     return (
                       <h2 key={data.platform.name}>
-                        <i className={getPlatform(data.platform.name)}></i>
+                        <i
+                          className={getPlatform(data.platform.name)}
+                          id={getByRatingId(game.rating)}
+                        ></i>
                       </h2>
                     )
                   })}

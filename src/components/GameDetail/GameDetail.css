@@ -170,7 +170,7 @@
 
 @media screen and (max-width: 640px) {
   .shadow .detail .description p {
-    line-height: 1.2rem;
+    line-height: 1.4rem;
     font-size: 0.8rem;
   }
 
@@ -184,9 +184,22 @@
 
   .shadow .detail .stats .info .platforms {
     margin-right: -1.5rem;
+    margin-top: 1.2rem;
   }
 
   .shadow .detail .stats .info .platforms h2 i {
-    margin-right: 0.8rem;
+    margin-right: 0.5rem;
   }
+}
+
+#green {
+  color: greenyellow;
+}
+
+#orange {
+  color: orange;
+}
+
+#red {
+  color: red;
 }
