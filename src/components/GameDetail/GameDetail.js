@@ -53,19 +53,19 @@ const GameDetail = ({ pathId }) => {
   const getPlatform = platform => {
     switch (platform) {
       case 'PlayStation 4':
-        return 'fa-brands fa-playstation fa-2x'
+        return 'fa-brands fa-playstation'
 
       case 'Xbox One':
-        return 'fa-brands fa-xbox fa-2x'
+        return 'fa-brands fa-xbox'
 
       case 'PC':
-        return 'fa-brands fa-steam fa-2x'
+        return 'fa-brands fa-steam'
 
       case 'Nintendo Switch':
-        return 'fa-solid fa-game-console-handheld fa-2x'
+        return 'fa-solid fa-tablet'
 
       case 'iOS':
-        return 'fa-brands fa-apple fa-2x'
+        return 'fa-brands fa-apple'
 
       default:
         return ''
@@ -82,17 +82,22 @@ const GameDetail = ({ pathId }) => {
           <motion.div className='detail' layoutId={pathId}>
             <motion.div className='stats'>
               <div className='rating'>
-                <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
-                <p>Rating: {game.rating}</p>
-                {getStars()}
+                <motion.h2 layoutId={`title ${pathId}`}>{game.name}</motion.h2>
+                <h2>
+                  <i class='fa-solid fa-star'></i> {game.rating}
+                </h2>
               </div>
 
               <motion.div className='info'>
-                <h3>Platforms</h3>
+                <h2>Platforms</h2>
                 <motion.div className='platforms'>
-                  {game.platforms.map(data => (
-                    <i className={getPlatform(data.platform.name)}></i>
-                  ))}
+                  {game.platforms.map(data => {
+                    return (
+                      <h2 key={data.platform.name}>
+                        <i className={getPlatform(data.platform.name)}></i>
+                      </h2>
+                    )
+                  })}
                 </motion.div>
               </motion.div>
             </motion.div>

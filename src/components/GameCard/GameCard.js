@@ -33,7 +33,7 @@ const GameCard = ({ name, released, id, image, rating }) => {
   }
 
   return (
-    <div className='game' onMouseOver={show} onMouseOut={hide}>
+    <div className='game' onMouseOver={show} onMouseLeave={hide}>
       <div className='name-rating'>
         <h3 className={getByRating(rating)}>
           <i className='fa-solid fa-star'></i>
@@ -48,10 +48,10 @@ const GameCard = ({ name, released, id, image, rating }) => {
       </div>
 
       <div ref={addMore} className='add-more'>
-        <h1>
+        <h1 onClick={handleDetail}>
           <i className='fa-solid fa-circle-info fa-1x'></i>
         </h1>
-        <h3 onClick={handleDetail}>
+        <h3>
           <i className='fa-solid fa-plus'></i>Wishlist
         </h3>
       </div>
