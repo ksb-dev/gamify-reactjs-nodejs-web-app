@@ -119,9 +119,9 @@
 
 @media screen and (max-width: 786px) {
   .shadow .detail {
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
   }
 
   .shadow .detail .media {
@@ -153,7 +153,7 @@
   .shadow .detail .gallery h2,
   .shadow .detail .stats .info .platforms h2,
   .shadow .detail .stats .info h2 {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   .shadow .detail .stats .info .platforms h2 i {
