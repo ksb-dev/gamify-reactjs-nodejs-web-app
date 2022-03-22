@@ -159,7 +159,7 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 640px) {
   .game {
     margin: 0.5rem;
     height: 300px;
@@ -187,17 +187,21 @@
   }
 
   .game .name-rating h4 {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     margin-bottom: 0.5rem;
     padding: 0;
+    border-top: 1px solid #0e0b16;
+    border-bottom: 1px solid #0e0b16;
   }
 
   .game .name-rating h3 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    padding: 0rem;
+    padding-bottom: 0.2rem;
   }
 
   .game .name-rating h5 {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     margin-top: 0rem;
   }
 
