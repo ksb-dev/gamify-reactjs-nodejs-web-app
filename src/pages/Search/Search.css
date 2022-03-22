@@ -24,8 +24,18 @@
   margin: 1rem 2rem;
 }
 
-.game-li .home-res a {
+.game-li .home-res a h2 {
   color: #fff;
+  display: inline-block;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #fff;
+}
+
+.game-li .home-res a h2:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
 }
 
 .game-li .games {
@@ -59,6 +69,15 @@
 @media screen and (max-width: 786px) {
   .game-li .home-res h2 {
     font-size: 1rem;
+  }
+
+  .game-li .home-res a h2 {
+    color: #fff;
+    display: inline-block;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #fff;
   }
 
   .game-li .games {
