@@ -20,19 +20,29 @@
   right: 5rem;
   color: #fff;
   z-index: 10;
-  box-shadow: 0 0 200px #fff;
+  box-shadow: 0 0 200px #0e0b16;
 }
 
-.shadow .detail a h1 {
+.shadow .detail .back-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shadow .detail .back-home a {
+  margin-right: 1rem;
+}
+
+.shadow .detail .back-home a h2 {
   display: inline-block;
   color: #fff;
-  padding: 0.2rem 1rem 0rem;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
+  box-shadow: 0 0 10px #fff;
 }
 
-.shadow .detail a h1:hover {
-  box-shadow: 0 0 10px #fff;
-  transform: rotate(90deg);
+.shadow .detail .back-home a h2:hover {
+  transform: scale(1.1);
   transition: all 0.3s ease;
 }
 
@@ -136,9 +146,16 @@
 
 @media screen and (max-width: 786px) {
   .shadow .detail {
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
+    padding: 1rem 2rem;
+    top: 0rem;
+    left: 0rem;
+    right: 0rem;
+    border-radius: unset;
+  }
+
+  .shadow .detail .back-home a h2 {
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
   }
 
   .shadow .detail .media {
@@ -156,10 +173,6 @@
 }
 
 @media screen and (max-width: 640px) {
-  .shadow .detail {
-    padding: 1rem;
-  }
-
   .shadow .detail .description p {
     line-height: 1.2rem;
     font-size: 0.6rem;

@@ -21,7 +21,7 @@ const GameDetail = ({ pathId }) => {
 
   useEffect(() => {
     dispatch(loadDetail(id))
-  }, [])
+  }, [id, dispatch])
 
   //Exit Detail
   const exitDetailHander = e => {
@@ -58,6 +58,8 @@ const GameDetail = ({ pathId }) => {
   //Data
   const { screen, game, isLoading } = useSelector(state => state.detail)
 
+  const { searched } = useSelector(state => state.games)
+
   const getByRating = rating => {
     if (rating > 4) return 'green'
     else if (rating > 3) return 'orange'
@@ -81,11 +83,29 @@ const GameDetail = ({ pathId }) => {
           }}
         >
           <motion.div className='detail' layoutId={pathId}>
-            <Link to='/'>
-              <h1>
-                <i class='fa-solid fa-xmark'></i>
-              </h1>
-            </Link>
+            <div className='back-home'>
+              {searched.length > 0 && (
+                <Link to='/search'>
+                  <h2>
+                    <i className='fa-solid fa-arrow-left'></i>
+                  </h2>
+                </Link>
+              )}
+
+              {searched.length <= 0 && (
+                <Link to='/'>
+                  <h2>
+                    <i className='fa-solid fa-arrow-left'></i>
+                  </h2>
+                </Link>
+              )}
+
+              <Link to='/'>
+                <h2>
+                  <i className='fa-solid fa-house'></i>
+                </h2>
+              </Link>
+            </div>
             <motion.div className='stats'>
               <div className='rating'>
                 <motion.h2 layoutId={`title ${pathId}`}>{game.name}</motion.h2>

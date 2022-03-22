@@ -53,7 +53,8 @@ export const loadSearched = query => {
     dispatch({
       type: 'FETCH_SEARCHED',
       payload: {
-        searched: newData.data.results
+        searched: newData.data.results,
+        query: query
       }
     })
   }

@@ -4,19 +4,18 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 // Actions
-import { loadPopular, loadNew, loadUpcoming } from '../actions/gamesAction'
+import { loadPopular, loadNew, loadUpcoming } from '../../actions/gamesAction'
 
 // Components
-import GameCard from '../components/GameCard/GameCard'
-import Header from '../components/Header/Header'
-import SideMenu from '../components/SideMenu/SideMenu'
+import GameCard from '../../components/GameCard/GameCard'
+import Header from '../../components/Header/Header'
+import SideMenu from '../../components/SideMenu/SideMenu'
 
 import './Home.css'
 
 const Home = () => {
   const [category, setCategory] = useState('popular')
   const [query, setQuery] = useState('')
-  const [typed, setTyped] = useState('')
 
   const sideMenu = useRef(null)
 
@@ -28,7 +27,7 @@ const Home = () => {
     dispatch(loadUpcoming())
   }, [dispatch])
 
-  const { popular, upcoming, newGames, loading, searched } = useSelector(
+  const { popular, upcoming, newGames, loading } = useSelector(
     state => state.games
   )
 
@@ -38,7 +37,6 @@ const Home = () => {
         setCategory={setCategory}
         query={query}
         setQuery={setQuery}
-        setTyped={setTyped}
         sideMenu={sideMenu}
       />
 
@@ -114,7 +112,7 @@ const Home = () => {
           </>
         )}
 
-        {!loading && category === 'searched' && (
+        {/*{!loading && category === 'searched' && (
           <>
             <h2>
               Search results for <span>" {typed} "</span>
@@ -135,7 +133,7 @@ const Home = () => {
               })}
             </div>
           </>
-        )}
+            )}*/}
       </div>
     </>
   )

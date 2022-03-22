@@ -1,5 +1,7 @@
 import React, { useRef } from 'react'
 
+import { useNavigate } from 'react-router-dom'
+
 // Images
 import joy from '../../img/joy8.jpg'
 
@@ -9,8 +11,9 @@ import { useDispatch } from 'react-redux'
 // Actions
 import { loadSearched } from '../../actions/gamesAction'
 
-const Header = ({ setCategory, query, setQuery, setTyped, sideMenu }) => {
+const Header = ({ setCategory, query, setQuery, sideMenu }) => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const img = useRef(null)
   const cover = useRef(null)
@@ -23,12 +26,17 @@ const Header = ({ setCategory, query, setQuery, setTyped, sideMenu }) => {
       behavior: 'smooth'
     })
 
-    if (value === 'popular') setCategory('popular')
-    if (value === 'upcoming') setCategory('upcoming')
-    if (value === 'new') setCategory('new')
-    if (value === 'searched') {
-      setCategory('searched')
-      setTyped(typed)
+    if (value === 'popular') {
+      setCategory('popular')
+      navigate('/')
+    }
+    if (value === 'upcoming') {
+      setCategory('upcoming')
+      navigate('/')
+    }
+    if (value === 'new') {
+      setCategory('new')
+      navigate('/')
     }
   }
 
@@ -69,8 +77,8 @@ const Header = ({ setCategory, query, setQuery, setTyped, sideMenu }) => {
             onSubmit={e => {
               e.preventDefault()
               dispatch(loadSearched(query))
-              handleClick('searched', query)
               setQuery('')
+              navigate('/search')
             }}
           >
             <input

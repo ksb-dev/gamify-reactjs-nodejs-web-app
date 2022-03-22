@@ -3,7 +3,8 @@ const initialState = {
   newGames: [],
   upcoming: [],
   searched: [],
-  loading: true
+  loading: true,
+  term: ''
 }
 
 const gamesReducer = (state = initialState, action) => {
@@ -41,6 +42,7 @@ const gamesReducer = (state = initialState, action) => {
       return {
         ...state,
         searched: action.payload.searched,
+        term: action.payload.query,
         loading: false
       }
 
