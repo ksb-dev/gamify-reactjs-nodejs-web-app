@@ -53,22 +53,22 @@ const GameDetail = ({ pathId }) => {
   const getPlatform = platform => {
     switch (platform) {
       case 'PlayStation 4':
-        return playstation
+        return 'fa-brands fa-playstation fa-2x'
 
       case 'Xbox One':
-        return xbox
+        return 'fa-brands fa-xbox fa-2x'
 
       case 'PC':
-        return steam
+        return 'fa-brands fa-steam fa-2x'
 
       case 'Nintendo Switch':
-        return nintendo
+        return 'fa-solid fa-game-console-handheld fa-2x'
 
       case 'iOS':
-        return apple
+        return 'fa-brands fa-apple fa-2x'
 
       default:
-        return gamepad
+        return ''
     }
   }
 
@@ -91,11 +91,7 @@ const GameDetail = ({ pathId }) => {
                 <h3>Platforms</h3>
                 <motion.div className='platforms'>
                   {game.platforms.map(data => (
-                    <img
-                      alt={data.platform.name}
-                      key={data.platform.id}
-                      src={getPlatform(data.platform.name)}
-                    ></img>
+                    <i className={getPlatform(data.platform.name)}></i>
                   ))}
                 </motion.div>
               </motion.div>

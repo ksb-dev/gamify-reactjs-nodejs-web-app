@@ -10,12 +10,13 @@
 }
 
 .shadow .detail {
-  width: 80%;
+  width: 70%;
   border-radius: 1rem;
   padding: 2rem 5rem;
   background: white;
   position: absolute;
   left: 10%;
+  right: 10%;
   color: black;
   z-index: 10;
 }
@@ -45,8 +46,9 @@
   justify-content: space-evenly;
 }
 
-.shadow .detail .stats .info .platforms img {
-  margin-left: 3rem;
+.shadow .detail .stats .info .platforms i {
+  margin-right: 1rem;
+  color: #000;
 }
 
 .shadow .detail .media {
