@@ -75,6 +75,12 @@ const GameDetail = ({ pathId }) => {
   //Data
   const { screen, game, isLoading } = useSelector(state => state.detail)
 
+  const getByRating = rating => {
+    if (rating > 4) return 'green'
+    else if (rating > 3) return 'orange'
+    else return 'red'
+  }
+
   return (
     <>
       {!isLoading && (
@@ -83,8 +89,8 @@ const GameDetail = ({ pathId }) => {
             <motion.div className='stats'>
               <div className='rating'>
                 <motion.h2 layoutId={`title ${pathId}`}>{game.name}</motion.h2>
-                <h2>
-                  <i class='fa-solid fa-star'></i> {game.rating}
+                <h2 className={getByRating(game.rating)}>
+                  <i className='fa-solid fa-star'></i> {game.rating}
                 </h2>
               </div>
 
