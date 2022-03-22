@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 // Components
 import Home from './pages/Home'
 import GameDetail from './components/GameDetail/GameDetail'
@@ -11,10 +13,12 @@ const App = () => {
   return (
     <>
       <div className='home'>
-        <GameDetail />
-        {/* Home */}
-
-        <Home />
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/detail/:id' element={<GameDetail />} />
+          </Routes>
+        </Router>
       </div>
     </>
   )

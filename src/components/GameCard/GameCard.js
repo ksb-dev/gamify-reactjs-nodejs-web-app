@@ -1,18 +1,12 @@
 import React, { useRef } from 'react'
 
+import { Link } from 'react-router-dom'
+
 // Styles
 import './GameCard.css'
 
-// Redux
-import { useDispatch } from 'react-redux'
-
-// Actions
-import { loadDetail } from '../../actions/detailAction'
-
 const GameCard = ({ name, released, id, image, rating }) => {
   const addMore = useRef(null)
-
-  const dispatch = useDispatch()
 
   const show = () => {
     addMore.current.style.transform = 'translateY(0%)'
@@ -28,34 +22,34 @@ const GameCard = ({ name, released, id, image, rating }) => {
     else return 'red'
   }
 
-  const handleDetail = () => {
-    dispatch(loadDetail(id))
-  }
-
   return (
-    <div className='game' onMouseOver={show} onMouseLeave={hide}>
-      <div className='name-rating'>
-        <h3 className={getByRating(rating)}>
-          <i className='fa-solid fa-star'></i>
-          {rating}
-        </h3>
-        <h4>{name}</h4>
-        <h5>{released}</h5>
-      </div>
+    <>
+      <div className='game' onMouseOver={show} onMouseLeave={hide}>
+        <div className='name-rating'>
+          <h3 className={getByRating(rating)}>
+            <i className='fa-solid fa-star'></i>
+            {rating}
+          </h3>
+          <h4>{name}</h4>
+          <h5>{released}</h5>
+        </div>
 
-      <div className='image'>
-        <img src={image} alt={name} />
-      </div>
+        <div className='image'>
+          <img src={image} alt={name} />
+        </div>
 
-      <div ref={addMore} className='add-more'>
-        <h1 onClick={handleDetail}>
-          <i className='fa-solid fa-circle-info fa-1x'></i>
-        </h1>
-        <h3>
-          <i className='fa-solid fa-plus'></i>Wishlist
-        </h3>
+        <div ref={addMore} className='add-more'>
+          <Link to={`/detail/${id}`}>
+            <h1>
+              <i className='fa-solid fa-circle-info fa-1x'></i>
+            </h1>
+          </Link>
+          <h3>
+            <i className='fa-solid fa-plus'></i>Wishlist
+          </h3>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -1,28 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
+import { Link } from 'react-router-dom'
 
 //Styling and Animation
 import { motion } from 'framer-motion'
 import './GameDetail.css'
 
 //Redux
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { smallImage } from '../../util'
 
-//IMAGES
-import playstation from '../../img/playstation.svg'
-import steam from '../../img/steam.svg'
-import xbox from '../../img/xbox.svg'
-import nintendo from '../../img/nintendo.svg'
-import apple from '../../img/apple.svg'
-import gamepad from '../../img/gamepad.svg'
-
-//Star Images
-import starEmpty from '../../img/star-empty.png'
-import starFull from '../../img/star-full.png'
+// Actions
+import { loadDetail } from '../../actions/detailAction'
 
 const GameDetail = ({ pathId }) => {
-  //const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const { id } = useParams()
+
+  useEffect(() => {
+    dispatch(loadDetail(id))
+  }, [])
 
   //Exit Detail
   const exitDetailHander = e => {
@@ -31,22 +30,6 @@ const GameDetail = ({ pathId }) => {
       document.body.style.overflow = 'auto'
       //navigate('/')
     }
-  }
-
-  //Get Stars
-  const getStars = () => {
-    const stars = []
-    const rating = Math.floor(game.rating)
-
-    for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        stars.push(<img alt='star' key={i} src={starFull}></img>)
-      } else {
-        stars.push(<img alt='star' key={i} src={starEmpty}></img>)
-      }
-    }
-
-    return stars
   }
 
   //GET PLATFORM IMAGES
@@ -83,9 +66,26 @@ const GameDetail = ({ pathId }) => {
 
   return (
     <>
+      {isLoading && (
+        <div className='loading'>
+          <div className='loader'></div>
+        </div>
+      )}
+
       {!isLoading && (
-        <motion.div className='shadow' onClick={exitDetailHander}>
+        <motion.div
+          className='shadow'
+          onClick={exitDetailHander}
+          style={{
+            background: `url(${smallImage(game.background_image, 1280)})`
+          }}
+        >
           <motion.div className='detail' layoutId={pathId}>
+            <Link to='/'>
+              <h1>
+                <i class='fa-solid fa-xmark'></i>
+              </h1>
+            </Link>
             <motion.div className='stats'>
               <div className='rating'>
                 <motion.h2 layoutId={`title ${pathId}`}>{game.name}</motion.h2>

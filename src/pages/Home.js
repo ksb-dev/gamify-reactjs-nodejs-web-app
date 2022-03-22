@@ -10,7 +10,6 @@ import { loadPopular, loadNew, loadUpcoming } from '../actions/gamesAction'
 import GameCard from '../components/GameCard/GameCard'
 import Header from '../components/Header/Header'
 import SideMenu from '../components/SideMenu/SideMenu'
-import GameDetail from '../components/GameDetail/GameDetail'
 
 import './Home.css'
 

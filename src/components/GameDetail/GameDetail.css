@@ -20,7 +20,20 @@
   right: 5rem;
   color: #fff;
   z-index: 10;
-  box-shadow: 0 0 20px #fff;
+  box-shadow: 0 0 200px #fff;
+}
+
+.shadow .detail a h1 {
+  display: inline-block;
+  color: #fff;
+  padding: 0.2rem 1rem 0rem;
+  border-radius: 5px;
+}
+
+.shadow .detail a h1:hover {
+  box-shadow: 0 0 10px #fff;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
 }
 
 .shadow .detail img {
@@ -85,6 +98,10 @@
   margin: 0;
 }
 
+.shadow .detail .gallery {
+  margin-bottom: 3rem;
+}
+
 .shadow .detail .gallery h2 {
   margin: 2rem 0;
 }
@@ -119,9 +136,9 @@
 
 @media screen and (max-width: 786px) {
   .shadow .detail {
-    top: 2rem;
-    left: 2rem;
-    right: 2rem;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
   }
 
   .shadow .detail .media {
@@ -140,7 +157,7 @@
 
 @media screen and (max-width: 640px) {
   .shadow .detail {
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   .shadow .detail .description p {
