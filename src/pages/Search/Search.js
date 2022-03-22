@@ -30,21 +30,17 @@ const Search = () => {
           </div>
         )}
 
-        <>
-          <div className='home-res'>
-            <h2>
-              Search results for <span>" {term} "</span>
-            </h2>
-            <Link to='/'>
-              <h2>
-                <i className='fa-solid fa-house'></i>
-              </h2>
-            </Link>
-          </div>
-        </>
+        <Link to='/'>
+          <h2>
+            <i className='fa-solid fa-house'></i>
+          </h2>
+        </Link>
 
         {!loading && term && (
           <>
+            <h2>
+              Search results for <span>" {term} "</span>
+            </h2>
             <div className='games'>
               {searched.map(game => {
                 return (
