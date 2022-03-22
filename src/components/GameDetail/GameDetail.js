@@ -117,10 +117,12 @@ const GameDetail = ({ pathId }) => {
             </motion.div>
 
             <motion.div className='description'>
+              <h2>Description</h2>
               <p>{game.description_raw}</p>
             </motion.div>
 
             <div className='gallery'>
+              <h2>Scrrenshots</h2>
               {screen.results.map(screen => (
                 <img
                   src={smallImage(screen.image, 1280)}
