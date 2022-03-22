@@ -1,63 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
 // Redux
-import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-// Components
-import GameCard from '../../components/GameCard/GameCard'
+// Actions
+import { loadSearched } from '../../actions/gamesAction'
 
+// Styles
 import './Search.css'
 
-const Search = () => {
-  const { loading, searched, term } = useSelector(state => state.games)
+// Components
+import SearchedResults from '../../components/SearchedResults/SearchedResults'
 
-  console.log(loading)
+const Search = () => {
+  const [query, setQuery] = useState('')
+
+  const dispatch = useDispatch()
 
   return (
     <>
-      <div className='game-li'>
-        {loading && (
-          <div className='loading'>
-            <div className='loader'></div>
-          </div>
-        )}
-
-        {loading && searched.length <= 0 && (
-          <div className='loading'>
-            <h1>Go back to home and enter your search</h1>
-          </div>
-        )}
-
+      <div className='home-search'>
         <Link to='/'>
           <h2>
             <i className='fa-solid fa-house'></i>
           </h2>
         </Link>
 
-        {!loading && term && (
-          <>
-            <h2>
-              Search results for <span>" {term} "</span>
-            </h2>
-            <div className='games'>
-              {searched.map(game => {
-                return (
-                  <GameCard
-                    key={game.id}
-                    name={game.name}
-                    released={game.released}
-                    id={game.id}
-                    image={game.background_image}
-                    rating={game.rating}
-                  />
-                )
-              })}
-            </div>
-          </>
-        )}
+        <form
+          onSubmit={e => {
+            e.preventDefault()
+            dispatch(loadSearched(query))
+            setQuery('')
+          }}
+        >
+          <input
+            type='text'
+            placeholder='Gamify here'
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+          />
+        </form>
       </div>
+
+      <SearchedResults />
     </>
   )
 }

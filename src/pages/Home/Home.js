@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 // Actions
 import { loadPopular, loadNew, loadUpcoming } from '../../actions/gamesAction'
+import { loadSearched } from '../../actions/gamesAction'
 
 // Components
 import GameCard from '../../components/GameCard/GameCard'
@@ -15,7 +16,6 @@ import './Home.css'
 
 const Home = () => {
   const [category, setCategory] = useState('popular')
-  const [query, setQuery] = useState('')
 
   const sideMenu = useRef(null)
 
@@ -25,6 +25,7 @@ const Home = () => {
     dispatch(loadPopular())
     dispatch(loadNew())
     dispatch(loadUpcoming())
+    dispatch(loadSearched(''))
   }, [dispatch])
 
   const { popular, upcoming, newGames, loading } = useSelector(
@@ -33,12 +34,7 @@ const Home = () => {
 
   return (
     <>
-      <Header
-        setCategory={setCategory}
-        query={query}
-        setQuery={setQuery}
-        sideMenu={sideMenu}
-      />
+      <Header setCategory={setCategory} sideMenu={sideMenu} />
 
       <SideMenu setCategory={setCategory} sideMenu={sideMenu} />
 

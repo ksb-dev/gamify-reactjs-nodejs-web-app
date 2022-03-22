@@ -58,7 +58,7 @@ const GameDetail = ({ pathId }) => {
   //Data
   const { screen, game, isLoading } = useSelector(state => state.detail)
 
-  const { searched } = useSelector(state => state.games)
+  const { searched, term } = useSelector(state => state.games)
 
   const getByRating = rating => {
     if (rating > 4) return 'green'
@@ -90,7 +90,7 @@ const GameDetail = ({ pathId }) => {
         >
           <motion.div className='detail' layoutId={pathId}>
             <div className='back-home'>
-              {searched.length > 0 && (
+              {searched.length > 0 && term && (
                 <Link to='/search'>
                   <h2>
                     <i className='fa-solid fa-arrow-left'></i>

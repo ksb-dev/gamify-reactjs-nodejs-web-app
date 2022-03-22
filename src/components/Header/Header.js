@@ -1,25 +1,20 @@
 import React, { useRef } from 'react'
-
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 // Images
 import joy from '../../img/joy8.jpg'
 
-// Redux
-import { useDispatch } from 'react-redux'
+// Styles
+import './Header.css'
 
-// Actions
-import { loadSearched } from '../../actions/gamesAction'
-
-const Header = ({ setCategory, query, setQuery, sideMenu }) => {
-  const dispatch = useDispatch()
+const Header = ({ setCategory, sideMenu }) => {
   const navigate = useNavigate()
 
   const img = useRef(null)
   const cover = useRef(null)
   const cat = useRef(null)
 
-  const handleClick = (value, typed) => {
+  const handleClick = value => {
     window.scroll({
       top: 0,
       left: 0,
@@ -64,44 +59,35 @@ const Header = ({ setCategory, query, setQuery, sideMenu }) => {
   }
 
   return (
-    <div className='header'>
-      <img ref={img} src={joy} alt='' />
+    <>
+      <div className='header'>
+        <img ref={img} src={joy} alt='' />
 
-      <div ref={cover} className='cover'></div>
+        <div ref={cover} className='cover'></div>
 
-      <div ref={cat} className='cat'>
-        <div className='name-search'>
-          <h1 onClick={() => handleClick('popular')}>Gamify</h1>
+        <div ref={cat} className='cat'>
+          <div className='name-search'>
+            <h1 onClick={() => handleClick('popular')}>Gamify</h1>
+            <Link to='/search'>
+              <h2>
+                <i className='fa-solid fa-magnifying-glass' />
+              </h2>
+            </Link>
+          </div>
 
-          <form
-            onSubmit={e => {
-              e.preventDefault()
-              dispatch(loadSearched(query))
-              setQuery('')
-              navigate('/search')
-            }}
-          >
-            <input
-              type='text'
-              placeholder='Gamify here'
-              value={query}
-              onChange={e => setQuery(e.target.value)}
-            />
-          </form>
-        </div>
+          <i className='fa-solid fa-bars-staggered' onClick={show}></i>
 
-        <i className='fa-solid fa-bars-staggered' onClick={show}></i>
-
-        <div className='categories'>
-          <ul>
-            <li>Wishlist</li>
-            <li onClick={() => handleClick('popular')}>popular</li>
-            <li onClick={() => handleClick('upcoming')}>upcoming</li>
-            <li onClick={() => handleClick('new')}>new</li>
-          </ul>
+          <div className='categories'>
+            <ul>
+              <li>Wishlist</li>
+              <li onClick={() => handleClick('popular')}>popular</li>
+              <li onClick={() => handleClick('upcoming')}>upcoming</li>
+              <li onClick={() => handleClick('new')}>new</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
