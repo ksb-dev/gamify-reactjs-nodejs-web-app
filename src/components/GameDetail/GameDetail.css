@@ -14,13 +14,14 @@
   padding: 2rem 5rem;
   background: white;
   background: linear-gradient(to left, #1a2930, #0e0b16);
+  background: rgba(14, 11, 22, 0.9);
   position: absolute;
   top: 5rem;
   left: 5rem;
   right: 5rem;
   color: #fff;
   z-index: 10;
-  box-shadow: 0 0 200px #fff;
+  box-shadow: 50px 50px 200px #000;
 }
 
 .shadow .detail .back-home {
