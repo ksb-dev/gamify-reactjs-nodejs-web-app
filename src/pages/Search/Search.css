@@ -9,7 +9,7 @@
   margin-right: 2rem;
   color: #fff;
   box-shadow: 0 0 10px #fff;
-  border-radius: 5px;
+  border-radius: 50%;
 }
 .home-search a:hover {
   transform: scale(1.1);
@@ -18,13 +18,13 @@
 
 .home-search a h2 {
   margin: 0;
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem 0.8rem;
 }
 
 .home-search form input {
   width: 300px;
   padding: 0.5rem;
-  border-radius: 50px;
+  border-radius: 5px;
   border: none;
 }
 
@@ -46,6 +46,10 @@
 @media screen and (max-width: 786px) {
   .home-search a {
     font-size: 0.7rem;
+  }
+
+  .home-search a h2 {
+    padding: 0.3rem 0.5rem;
   }
 
   .home-search form input {

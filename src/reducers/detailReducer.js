@@ -1,6 +1,7 @@
 const initialState = {
   game: { platforms: [] },
   screen: { results: [] },
+  genre: { genres: [] },
   isLoading: true
 }
 
@@ -11,6 +12,7 @@ const detailReducer = (state = initialState, action) => {
         ...state,
         game: action.payload.game,
         screen: action.payload.screen,
+        genre: action.payload.game,
         isLoading: false
       }
 

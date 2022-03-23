@@ -56,7 +56,9 @@ const GameDetail = ({ pathId }) => {
   }
 
   //Data
-  const { screen, game, isLoading } = useSelector(state => state.detail)
+  const { screen, game, isLoading, genre } = useSelector(state => state.detail)
+  console.log(game.website)
+  let web = game.website
 
   const { searched, term } = useSelector(state => state.games)
 
@@ -70,6 +72,12 @@ const GameDetail = ({ pathId }) => {
     if (rating > 4) return 'green'
     else if (rating > 3) return 'orange'
     else return 'red'
+  }
+
+  const getGenreColor = rating => {
+    if (rating > 4) return 'greenGenre'
+    else if (rating > 3) return 'orangeGenre'
+    else return 'redGenre'
   }
 
   return (
@@ -105,6 +113,17 @@ const GameDetail = ({ pathId }) => {
                   </h2>
                 </Link>
               )}
+
+              <a
+                href={game.website}
+                target='_blank'
+                className='website'
+                rel='noreferrer'
+              >
+                <h1>
+                  <i className='fa-solid fa-globe'></i>
+                </h1>
+              </a>
 
               <Link to='/'>
                 <h2>
@@ -144,6 +163,18 @@ const GameDetail = ({ pathId }) => {
                 alt={game.background_image}
               />
             </motion.div>
+
+            <div className='genre'>
+              <ul className='genre-list'>
+                {genre.genres.map(data => {
+                  return (
+                    <li key={data.name} className={getGenreColor(game.rating)}>
+                      {data.name}
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
 
             <motion.div className='description'>
               <h2>Description</h2>

@@ -20,7 +20,7 @@
   right: 5rem;
   color: #fff;
   z-index: 10;
-  box-shadow: 0 0 200px #0e0b16;
+  box-shadow: 0 0 200px #fff;
 }
 
 .shadow .detail .back-home {
@@ -32,8 +32,8 @@
 .shadow .detail .back-home a h2 {
   display: inline-block;
   color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  border-radius: 50%;
   box-shadow: 0 0 10px #fff;
 }
 
@@ -61,11 +61,14 @@
 }
 
 .shadow .detail .stats .info {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .shadow .detail .stats .info h2 {
-  margin-top: -0.5rem;
+  margin-top: -1rem;
 }
 
 .shadow .detail .stats .info .platforms {
@@ -88,6 +91,72 @@
 
 .shadow .detail .media img {
   width: 100%;
+}
+
+.shadow .detail .genre {
+  margin: 5rem 0rem 0rem 0rem;
+}
+
+.shadow .detail .genre ul {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.shadow .detail .genre ul li {
+  list-style: none;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  letter-spacing: 2px;
+}
+
+.shadow .detail .website {
+  text-decoration: none;
+  color: tomato;
+}
+
+.shadow .detail .website h1 {
+  margin: 0;
+}
+.shadow .detail .website h1 i {
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4,
+      0 0 40px #03bcf4 0 0 80px #03bcf4 0 0 160px #03bcf4;
+  }
+}
+
+.shadow .detail .website h1 i:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
 }
 
 .shadow .detail .description {
@@ -135,6 +204,12 @@
     font-size: 1rem;
   }
 
+  .shadow .detail .genre ul li {
+    margin-right: 1rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
   .shadow .detail .stats .info .platforms h2 i {
     margin-right: 0.5rem;
   }
@@ -151,11 +226,51 @@
 
   .shadow .detail .back-home a h2 {
     font-size: 1rem;
-    padding: 0.2rem 0.5rem;
+    padding: 0.3rem 0.5rem;
+  }
+  .shadow .detail .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
+  .shadow .detail .stats .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .shadow .detail .stats .info h2 {
+    margin-top: 0;
+  }
+
+  .shadow .detail .stats .info .platforms {
+    margin-bottom: 1rem;
+  }
+
+  .shadow .detail .stats .info .platforms h2 i {
+    margin-left: 0rem;
+    margin-right: 0.5rem;
+  }
   .shadow .detail .media {
     margin-top: 1rem;
+  }
+
+  .shadow .detail .genre {
+    margin-top: 2rem;
+  }
+
+  .shadow .detail .genre ul li {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .shadow .detail .website h1 {
+    font-size: 1.5rem;
   }
 
   .shadow .detail .description {
@@ -181,16 +296,6 @@
   .shadow .detail .stats .info h2 {
     font-size: 0.8rem;
   }
-
-  .shadow .detail .stats .info .platforms {
-    margin-right: 0rem;
-    margin-top: 1.2rem;
-  }
-
-  .shadow .detail .stats .info .platforms h2 i {
-    margin-right: 0.5rem;
-    margin-left: 0rem;
-  }
 }
 
 #green {
@@ -203,4 +308,19 @@
 
 #red {
   color: red;
+}
+
+.greenGenre {
+  color: greenyellow;
+  border: 2px solid greenyellow;
+}
+
+.orangeGenre {
+  color: orange;
+  border: 2px solid orange;
+}
+
+.redGenre {
+  color: red;
+  border: 2px solid red;
 }
