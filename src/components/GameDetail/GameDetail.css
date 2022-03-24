@@ -14,8 +14,8 @@
   background: linear-gradient(to left, #49274a, #0e0a18);
   background: linear-gradient(
     to left,
-    rgba(73, 39, 74, 0.95),
-    rgba(14, 10, 24, 0.95)
+    rgba(73, 39, 74, 0.9),
+    rgba(14, 10, 24, 0.9)
   );
   position: absolute;
   top: 5rem;
@@ -176,6 +176,10 @@
 
 .shadow .detail .description {
   margin: 5rem 0rem;
+  background: linear-gradient(to right, #49274a, #0e0a18);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #fff;
 }
 
 .shadow .detail .description h2 {
@@ -184,7 +188,7 @@
 
 .shadow .detail .description p {
   letter-spacing: 2px;
-  line-height: 2rem;
+  line-height: 2.5rem;
   margin: 0;
 }
 
@@ -285,6 +289,10 @@
     margin-bottom: 0.5rem;
     padding: 0.2rem 0.5rem;
     font-size: 0.7rem;
+  }
+
+  .shadow .detail .gallery img {
+    margin-bottom: 2rem;
   }
 
   .shadow .detail .website h1 {
