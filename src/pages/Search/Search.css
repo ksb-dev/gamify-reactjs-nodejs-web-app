@@ -29,7 +29,7 @@
 .home-search form input {
   width: 300px;
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: 50px;
   border: none;
   box-shadow: 0 0 10px #49274a;
 }
