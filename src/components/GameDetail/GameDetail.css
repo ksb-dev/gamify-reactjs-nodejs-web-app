@@ -11,7 +11,12 @@
 .shadow .detail {
   border-radius: 1rem;
   padding: 2rem 5rem;
-  background: rgba(14, 10, 24, 0.95);
+  background: linear-gradient(to left, #49274a, #0e0a18);
+  background: linear-gradient(
+    to left,
+    rgba(73, 39, 74, 0.95),
+    rgba(14, 10, 24, 0.95)
+  );
   position: absolute;
   top: 5rem;
   left: 5rem;
@@ -43,7 +48,7 @@
 .shadow .detail img {
   width: 100%;
   border-radius: 5px;
-  box-shadow: 0 0 50px #49274a;
+  box-shadow: 0 0 20px #fff;
 }
 
 .shadow .detail .stats {
@@ -52,9 +57,14 @@
   justify-content: space-between;
 }
 
+.shadow .detail .stats .rating h2 {
+  text-shadow: 0 0 10px #fff;
+}
+
 .shadow .detail .stats .rating h2 i {
   margin-left: 1rem;
   font-family: 'Cinzel Decorative', cursive;
+  text-shadow: unset;
 }
 
 .shadow .detail .stats img {
@@ -72,6 +82,7 @@
 
 .shadow .detail .stats .info h2 {
   margin-top: -1rem;
+  text-shadow: 0 0 10px #fff;
 }
 
 .shadow .detail .stats .info .platforms {
@@ -81,6 +92,7 @@
 
 .shadow .detail .stats .info .platforms h2 {
   margin: 0;
+  text-shadow: unset;
 }
 
 .shadow .detail .stats .info .platforms h2 i {

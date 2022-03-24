@@ -87,7 +87,11 @@ const GameDetail = ({ pathId }) => {
       )}
 
       {!isLoading && (
-        <motion.div className='shadow' onClick={exitDetailHander}>
+        <motion.div
+          className='shadow'
+          onClick={exitDetailHander}
+          style={{ backgroundImage: `url(${game.background_image})` }}
+        >
           <motion.div
             className={`${getByRating(game.rating)} detail`}
             layoutId={pathId}

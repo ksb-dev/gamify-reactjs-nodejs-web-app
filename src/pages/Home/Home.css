@@ -14,8 +14,8 @@
 .game-list h2 {
   display: inline-block;
   margin: 5rem 0rem 2rem;
-  text-shadow: 0 0 20px #fff;
-  color: #0e0a18;
+  color: #49274a;
+  text-shadow: 0 0 10px #49274a;
 }
 
 .game-list .games {

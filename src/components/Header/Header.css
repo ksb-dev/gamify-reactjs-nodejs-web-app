@@ -19,7 +19,7 @@
 
 .header .cover {
   position: fixed;
-  background: rgba(14, 10, 24, 0.5);
+  background: linear-gradient(to right, #49274a, rgb(14, 10, 24, 0.5));
   z-index: 2;
   width: 100vw;
   height: 200px;

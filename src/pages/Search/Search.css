@@ -1,14 +1,21 @@
 .home-search {
+  position: fixed;
+  margin: 0 auto;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 2rem;
+  background: linear-gradient(to right, #49274a, #0e0a18);
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  z-index: 1;
 }
 
 .home-search a {
   margin-right: 2rem;
-  color: #49274a;
-  box-shadow: 0 0 10px #49274a;
+  color: #fff;
+  box-shadow: 0 0 10px #fff;
   border-radius: 50%;
 }
 .home-search a:hover {

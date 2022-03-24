@@ -2,12 +2,12 @@
   text-align: center;
   cursor: pointer;
   overflow: hidden;
-  background: rgba(14, 10, 24, 1);
+  background: linear-gradient(to left, #49274a, #0e0a18);
   color: #fff;
   margin: 1rem;
   position: relative;
   border-radius: 5px;
-  box-shadow: 0 0 20px #49274a;
+  box-shadow: 0 0 20px #0e0a18;
 }
 
 .game .name-rating {
@@ -27,7 +27,7 @@
 
 .game .name-rating h4 {
   margin: 0;
-  background: #0e0a18;
+  background: linear-gradient(to right, #49274a, #0e0a18);
   color: #fff;
   height: 50px;
   display: flex;
@@ -59,8 +59,7 @@
 }
 
 .game .add-more {
-  background: rgba(14, 10, 24, 0.95);
-
+  background: linear-gradient(#49274a, #0e0a18);
   position: absolute;
   top: 0rem;
   width: 100%;
@@ -91,7 +90,7 @@
 
 .game .add-more h3:hover {
   background: greenyellow;
-  color: #0e0b16;
+  color: #49274a;
   border: none;
   padding: 8px 15px;
   transition: color 0.3s ease;
