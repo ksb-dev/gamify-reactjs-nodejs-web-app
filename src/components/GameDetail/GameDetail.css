@@ -46,7 +46,7 @@
 .shadow .detail img {
   width: 100%;
   border-radius: 5px;
-  box-shadow: 0 0 20px #fff;
+  /*box-shadow: 0 0 20px #fff;*/
 }
 
 .shadow .detail .stats {
@@ -190,7 +190,7 @@
   font-weight: bold;
   text-shadow: 0 0 10px #fff;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-transform: lowercase;
+  text-transform: capitalize;
   cursor: pointer;
 }
 
@@ -342,6 +342,18 @@
 
 .redShadow {
   box-shadow: 50px 50px 200px red;
+}
+
+.greenShad {
+  box-shadow: 0 0 50px greenyellow;
+}
+
+.orangeShad {
+  box-shadow: 0 0 50px orange;
+}
+
+.redShad {
+  box-shadow: 0 0 50px red;
 }
 
 #green {

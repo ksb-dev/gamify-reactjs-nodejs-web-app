@@ -15,23 +15,39 @@ import SideMenu from '../../components/SideMenu/SideMenu'
 import './Home.css'
 
 const Home = () => {
-  const [category, setCategory] = useState('popular')
+  const [category, setCategory] = useState(
+    JSON.parse(localStorage.getItem('cat'))
+  )
+
+  console.log(category)
 
   const sideMenu = useRef(null)
 
   const dispatch = useDispatch()
 
-  const { popular, upcoming, newGames, loading, searched } = useSelector(
+  const { popular, upcoming, newGames, loading } = useSelector(
     state => state.games
   )
 
   useEffect(() => {
-    dispatch(loadPopular())
-    dispatch(loadNew())
-    dispatch(loadUpcoming())
+    if (category === null) {
+      localStorage.setItem('cat', JSON.stringify('popular'))
+      setCategory('popular')
+    } else {
+      localStorage.setItem('cat', JSON.stringify(category))
+    }
+    if (popular.length <= 0) {
+      dispatch(loadPopular())
+    }
+    if (upcoming.length <= 0) {
+      dispatch(loadNew())
+    }
+    if (newGames.length <= 0) {
+      dispatch(loadUpcoming())
+    }
     localStorage.setItem('term', JSON.stringify(''))
     dispatch(loadSearched(''))
-  }, [dispatch])
+  }, [dispatch, category])
 
   return (
     <>

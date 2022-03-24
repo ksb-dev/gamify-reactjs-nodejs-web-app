@@ -68,6 +68,12 @@ const GameDetail = ({ pathId }) => {
     else return 'redShadow'
   }
 
+  const getShadow = rating => {
+    if (rating > 4) return 'greenShad'
+    else if (rating > 3) return 'orangeShad'
+    else return 'redShad'
+  }
+
   const getByRatingId = rating => {
     if (rating > 4) return 'green'
     else if (rating > 3) return 'orange'
@@ -123,7 +129,7 @@ const GameDetail = ({ pathId }) => {
                   rel='noreferrer'
                 >
                   <h1>
-                    <i className='fa-solid fa-globe'></i>
+                    <i class='fa-solid fa-earth-americas'></i>
                   </h1>
                 </a>
               )}
@@ -171,6 +177,7 @@ const GameDetail = ({ pathId }) => {
 
             <motion.div className='media'>
               <motion.img
+                className={getShadow(game.rating)}
                 layoutId={`image ${pathId}`}
                 src={smallImage(game.background_image, 1280)}
                 alt={game.background_image}
@@ -219,6 +226,7 @@ const GameDetail = ({ pathId }) => {
                   <h2>Scrrenshots</h2>
                   {screen.results.map(screen => (
                     <img
+                      className={getShadow(game.rating)}
                       src={smallImage(screen.image, 1280)}
                       key={screen.id}
                       alt={screen.image}
