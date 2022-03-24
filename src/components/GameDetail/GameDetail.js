@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -18,6 +18,8 @@ const GameDetail = ({ pathId }) => {
   const dispatch = useDispatch()
 
   const { id } = useParams()
+
+  const [read, setRead] = useState(false)
 
   useEffect(() => {
     dispatch(loadDetail(id))
@@ -195,7 +197,14 @@ const GameDetail = ({ pathId }) => {
               {game.description && (
                 <>
                   <h2>Description</h2>
-                  <p>{game.description_raw}</p>
+                  <p>
+                    {!read && game.description_raw.substring(0, 250)}
+
+                    {!read && game.description_raw.length > 250 && (
+                      <span onClick={() => setRead(true)}> read more...</span>
+                    )}
+                    {read && game.description_raw}
+                  </p>
                 </>
               )}
             </motion.div>

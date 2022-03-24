@@ -13,7 +13,7 @@
   padding: 2rem 5rem;
   background: linear-gradient(to left, #49274a, #0e0a18);
   background: linear-gradient(
-    to left,
+    to right,
     rgba(73, 39, 74, 0.95),
     rgba(14, 10, 24, 0.95)
   );
@@ -174,9 +174,6 @@
 
 .shadow .detail .description {
   margin: 5rem 0rem;
-  background: linear-gradient(to right, #49274a, #0e0a18);
-  padding: 2rem;
-  border-radius: 5px;
 }
 
 .shadow .detail .description h2 {
@@ -187,6 +184,14 @@
   letter-spacing: 2px;
   line-height: 2.5rem;
   margin: 0;
+}
+
+.shadow .detail .description p span {
+  font-weight: bold;
+  text-shadow: 0 0 10px #fff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: lowercase;
+  cursor: pointer;
 }
 
 .shadow .detail .gallery {
@@ -298,6 +303,8 @@
 
   .shadow .detail .description {
     margin: 1rem 0rem;
+    padding: 0;
+    background: transparent;
   }
 
   .shadow .detail .description p {
@@ -307,6 +314,10 @@
 }
 
 @media screen and (max-width: 640px) {
+  .shadow .detail .description {
+    margin: 0rem 0rem;
+  }
+
   .shadow .detail .description p {
     line-height: 1.4rem;
     font-size: 0.8rem;
