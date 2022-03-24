@@ -21,16 +21,17 @@ const Home = () => {
 
   const dispatch = useDispatch()
 
+  const { popular, upcoming, newGames, loading, searched } = useSelector(
+    state => state.games
+  )
+
   useEffect(() => {
     dispatch(loadPopular())
     dispatch(loadNew())
     dispatch(loadUpcoming())
     localStorage.setItem('term', JSON.stringify(''))
+    dispatch(loadSearched(''))
   }, [dispatch])
-
-  const { popular, upcoming, newGames, loading } = useSelector(
-    state => state.games
-  )
 
   return (
     <>

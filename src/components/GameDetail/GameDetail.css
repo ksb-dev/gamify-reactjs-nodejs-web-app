@@ -35,9 +35,7 @@
 .shadow .detail .back-home a h2 {
   display: inline-block;
   color: #fff;
-  padding: 0.5rem 0.7rem;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #fff;
+  text-shadow: 0 0 10px #fff;
 }
 
 .shadow .detail .back-home a h2:hover {

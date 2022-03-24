@@ -60,8 +60,6 @@ const GameDetail = ({ pathId }) => {
 
   const { searched, term } = useSelector(state => state.games)
 
-  console.log(game.description)
-
   const getByRating = rating => {
     if (rating > 4) return 'greenShadow'
     else if (rating > 3) return 'orangeShadow'
@@ -107,8 +105,8 @@ const GameDetail = ({ pathId }) => {
                 </Link>
               )}
 
-              {searched.length <= 0 && (
-                <Link to='/'>
+              {searched.length === 0 && (
+                <Link to='/search'>
                   <h2>
                     <i className='fa-solid fa-magnifying-glass'></i>
                   </h2>

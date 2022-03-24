@@ -29,7 +29,7 @@ const Find = () => {
           </div>
         )}
 
-        {searched && term && (
+        {term && (
           <>
             <h2>
               Search results for <span>" {term} "</span>
@@ -51,7 +51,7 @@ const Find = () => {
           </>
         )}
 
-        {searched.length <= 0 && (
+        {searched.length <= 0 && term && (
           <div className='loading'>
             <h1>your search Not Found !</h1>
           </div>
