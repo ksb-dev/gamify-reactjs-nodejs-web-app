@@ -204,6 +204,10 @@ const GameDetail = ({ pathId }) => {
                       <span onClick={() => setRead(true)}> read more...</span>
                     )}
                     {read && game.description_raw}
+
+                    {read && game.description_raw.length > 250 && (
+                      <span onClick={() => setRead(false)}> hide more</span>
+                    )}
                   </p>
                 </>
               )}
