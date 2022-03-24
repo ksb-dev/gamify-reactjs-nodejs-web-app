@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -15,7 +15,11 @@ import './Search.css'
 import SearchedResults from '../../components/SearchedResults/SearchedResults'
 
 const Search = () => {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState(JSON.parse(localStorage.getItem('term')))
+
+  useEffect(() => {
+    localStorage.setItem('term', JSON.stringify(query))
+  }, [query])
 
   const dispatch = useDispatch()
 
@@ -32,7 +36,6 @@ const Search = () => {
           onSubmit={e => {
             e.preventDefault()
             dispatch(loadSearched(query))
-            setQuery('')
           }}
         >
           <input

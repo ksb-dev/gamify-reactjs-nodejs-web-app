@@ -25,7 +25,7 @@ const Home = () => {
     dispatch(loadPopular())
     dispatch(loadNew())
     dispatch(loadUpcoming())
-    dispatch(loadSearched(''))
+    localStorage.setItem('term', JSON.stringify(''))
   }, [dispatch])
 
   const { popular, upcoming, newGames, loading } = useSelector(

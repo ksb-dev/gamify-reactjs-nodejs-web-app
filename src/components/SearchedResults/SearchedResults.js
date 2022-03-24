@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 // Redux
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+
+// Actions
+import { loadSearched } from '../../actions/gamesAction'
 
 // Components
 import GameCard from '../GameCard/GameCard'
@@ -10,6 +13,12 @@ import './SearchedResults.css'
 
 const Find = () => {
   const { loading, searched, term } = useSelector(state => state.games)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(loadSearched(JSON.parse(localStorage.getItem('term'))))
+  }, [dispatch])
 
   return (
     <>
@@ -20,13 +29,7 @@ const Find = () => {
           </div>
         )}
 
-        {loading && searched.length <= 0 && (
-          <div className='loading'>
-            <h1>Please enter your search</h1>
-          </div>
-        )}
-
-        {!loading && term && (
+        {searched && term && (
           <>
             <h2>
               Search results for <span>" {term} "</span>
@@ -46,6 +49,12 @@ const Find = () => {
               })}
             </div>
           </>
+        )}
+
+        {searched.length <= 0 && (
+          <div className='loading'>
+            <h1>your search Not Found !</h1>
+          </div>
         )}
       </div>
     </>

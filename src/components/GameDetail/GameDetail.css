@@ -14,8 +14,8 @@
   background: linear-gradient(to left, #49274a, #0e0a18);
   background: linear-gradient(
     to left,
-    rgba(73, 39, 74, 0.9),
-    rgba(14, 10, 24, 0.9)
+    rgba(73, 39, 74, 0.95),
+    rgba(14, 10, 24, 0.95)
   );
   position: absolute;
   top: 5rem;

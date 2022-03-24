@@ -34,9 +34,10 @@
   align-items: center;
   justify-content: center;
   letter-spacing: 2px;
-  border-top: 3px solid #49274a;
-  border-bottom: 3px solid #49274a;
+  /*border-top: 3px solid #49274a;
+  border-bottom: 3px solid #49274a;*/
   padding: 0.5rem;
+  border-radius: 5px;
 }
 
 .game .name-rating h5 {
