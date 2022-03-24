@@ -57,15 +57,13 @@ const GameDetail = ({ pathId }) => {
 
   //Data
   const { screen, game, isLoading, genre } = useSelector(state => state.detail)
-  console.log(game.website)
-  let web = game.website
 
   const { searched, term } = useSelector(state => state.games)
 
   const getByRating = rating => {
-    if (rating > 4) return 'green'
-    else if (rating > 3) return 'orange'
-    else return 'red'
+    if (rating > 4) return 'greenShadow'
+    else if (rating > 3) return 'orangeShadow'
+    else return 'redShadow'
   }
 
   const getByRatingId = rating => {
@@ -96,7 +94,10 @@ const GameDetail = ({ pathId }) => {
             background: `url(${smallImage(game.background_image, 1280)})`
           }}
         >
-          <motion.div className='detail' layoutId={pathId}>
+          <motion.div
+            className={`${getByRating(game.rating)} detail`}
+            layoutId={pathId}
+          >
             <div className='back-home'>
               {searched.length > 0 && term && (
                 <Link to='/search'>
@@ -114,16 +115,18 @@ const GameDetail = ({ pathId }) => {
                 </Link>
               )}
 
-              <a
-                href={game.website}
-                target='_blank'
-                className='website'
-                rel='noreferrer'
-              >
-                <h1>
-                  <i className='fa-solid fa-globe'></i>
-                </h1>
-              </a>
+              {game.website && (
+                <a
+                  href={game.website}
+                  target='_blank'
+                  className='website'
+                  rel='noreferrer'
+                >
+                  <h1>
+                    <i className='fa-solid fa-globe'></i>
+                  </h1>
+                </a>
+              )}
 
               <Link to='/'>
                 <h2>
@@ -134,8 +137,14 @@ const GameDetail = ({ pathId }) => {
             <motion.div className='stats'>
               <div className='rating'>
                 <motion.h2 layoutId={`title ${pathId}`}>{game.name}</motion.h2>
-                <h2 className={getByRating(game.rating)}>
-                  <i className='fa-solid fa-star'></i> {game.rating}
+                <h2>
+                  Rating
+                  <i
+                    className='fa-solid fa-star'
+                    id={getByRatingId(game.rating)}
+                  >
+                    {game.rating}
+                  </i>
                 </h2>
               </div>
 
