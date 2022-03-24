@@ -2,7 +2,6 @@
   width: 100%;
   min-height: 100vh;
   overflow-y: scroll;
-  background: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   left: 0;
@@ -12,9 +11,7 @@
 .shadow .detail {
   border-radius: 1rem;
   padding: 2rem 5rem;
-  background: white;
-  background: linear-gradient(to left, #1a2930, #0e0b16);
-  background: rgba(14, 11, 22, 0.95);
+  background: rgba(14, 10, 24, 0.95);
   position: absolute;
   top: 5rem;
   left: 5rem;
@@ -46,7 +43,7 @@
 .shadow .detail img {
   width: 100%;
   border-radius: 5px;
-  box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 50px #49274a;
 }
 
 .shadow .detail .stats {
@@ -188,7 +185,8 @@
 }
 
 .shadow .detail .gallery img {
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar {

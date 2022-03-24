@@ -1,5 +1,5 @@
 .side-menu {
-  background: rgba(26, 41, 48, 0.95);
+  background: rgba(14, 10, 24, 0.95);
   position: fixed;
   top: 0;
   width: 100vw;
@@ -10,7 +10,7 @@
 }
 
 .side-menu .menu {
-  background: linear-gradient(to right, rgba(26, 41, 48, 0), #0e0b16);
+  background: rgba(14, 10, 24, 0);
   position: fixed;
   right: 0;
   top: 0;
@@ -44,9 +44,6 @@
 }
 
 .side-menu .menu ul li:hover {
-  /*padding-right: 0.5rem;
-  border-right: 5px solid #fff;
-  transition: all 0.3s ease;*/
   box-shadow: 0 0 10px #fff;
   transition: all 0.3s ease;
 }

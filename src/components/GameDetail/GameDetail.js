@@ -87,13 +87,7 @@ const GameDetail = ({ pathId }) => {
       )}
 
       {!isLoading && (
-        <motion.div
-          className='shadow'
-          onClick={exitDetailHander}
-          style={{
-            background: `url(${smallImage(game.background_image, 1280)})`
-          }}
-        >
+        <motion.div className='shadow' onClick={exitDetailHander}>
           <motion.div
             className={`${getByRating(game.rating)} detail`}
             layoutId={pathId}
@@ -149,19 +143,23 @@ const GameDetail = ({ pathId }) => {
               </div>
 
               <motion.div className='info'>
-                <h2>Platforms</h2>
-                <motion.div className='platforms'>
-                  {game.platforms.map(data => {
-                    return (
-                      <h2 key={data.platform.name}>
-                        <i
-                          className={getPlatform(data.platform.name)}
-                          id={getByRatingId(game.rating)}
-                        ></i>
-                      </h2>
-                    )
-                  })}
-                </motion.div>
+                {game.platforms && (
+                  <>
+                    <h2>Platforms</h2>
+                    <motion.div className='platforms'>
+                      {game.platforms.map(data => {
+                        return (
+                          <h2 key={data.platform.name}>
+                            <i
+                              className={getPlatform(data.platform.name)}
+                              id={getByRatingId(game.rating)}
+                            ></i>
+                          </h2>
+                        )
+                      })}
+                    </motion.div>
+                  </>
+                )}
               </motion.div>
             </motion.div>
 
@@ -175,30 +173,42 @@ const GameDetail = ({ pathId }) => {
 
             <div className='genre'>
               <ul className='genre-list'>
-                {genre.genres.map(data => {
-                  return (
-                    <li key={data.name} className={getGenreColor(game.rating)}>
-                      {data.name}
-                    </li>
-                  )
-                })}
+                {genre.genres.length > 0 &&
+                  genre.genres.map(data => {
+                    return (
+                      <li
+                        key={data.name}
+                        className={getGenreColor(game.rating)}
+                      >
+                        {data.name}
+                      </li>
+                    )
+                  })}
               </ul>
             </div>
 
             <motion.div className='description'>
-              <h2>Description</h2>
-              <p>{game.description_raw}</p>
+              {game.description && (
+                <>
+                  <h2>Description</h2>
+                  <p>{game.description_raw}</p>
+                </>
+              )}
             </motion.div>
 
             <div className='gallery'>
-              <h2>Scrrenshots</h2>
-              {screen.results.map(screen => (
-                <img
-                  src={smallImage(screen.image, 1280)}
-                  key={screen.id}
-                  alt={screen.image}
-                />
-              ))}
+              {screen.results.length > 0 && (
+                <>
+                  <h2>Scrrenshots</h2>
+                  {screen.results.map(screen => (
+                    <img
+                      src={smallImage(screen.image, 1280)}
+                      key={screen.id}
+                      alt={screen.image}
+                    />
+                  ))}
+                </>
+              )}
             </div>
           </motion.div>
         </motion.div>

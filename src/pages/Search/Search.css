@@ -7,8 +7,8 @@
 
 .home-search a {
   margin-right: 2rem;
-  color: #fff;
-  box-shadow: 0 0 10px #fff;
+  color: #49274a;
+  box-shadow: 0 0 10px #49274a;
   border-radius: 50%;
 }
 .home-search a:hover {
@@ -18,7 +18,7 @@
 
 .home-search a h2 {
   margin: 0;
-  padding: 0.5rem 0.8rem;
+  padding: 0.6rem 0.8rem;
 }
 
 .home-search form input {
@@ -26,6 +26,7 @@
   padding: 0.5rem;
   border-radius: 5px;
   border: none;
+  box-shadow: 0 0 10px #49274a;
 }
 
 .home-search form input:focus {
@@ -41,6 +42,7 @@
   letter-spacing: 2px;
   font-weight: bold;
   padding-left: 1rem;
+  color: #49274a;
 }
 
 @media screen and (max-width: 786px) {

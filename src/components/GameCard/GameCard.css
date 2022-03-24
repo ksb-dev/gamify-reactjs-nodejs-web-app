@@ -2,18 +2,12 @@
   text-align: center;
   cursor: pointer;
   overflow: hidden;
-  background: rgb(31, 31, 31);
-  background: linear-gradient(to right, rgb(73, 0, 0), maroon);
-  background: linear-gradient(to left, #a9abb8, #25274d);
-  background: linear-gradient(to left, #254e58, #112d32);
-  background: linear-gradient(to left, #5a5560, #46344e);
-  background: linear-gradient(to left, #49274a, #0e0a18);
-  background: linear-gradient(to left, #1a2930, #0e0b16);
+  background: rgba(14, 10, 24, 1);
   color: #fff;
   margin: 1rem;
   position: relative;
-  box-shadow: 0px 0px 10px #fff;
   border-radius: 5px;
+  box-shadow: 0 0 20px #49274a;
 }
 
 .game .name-rating {
@@ -33,30 +27,15 @@
 
 .game .name-rating h4 {
   margin: 0;
-  background: linear-gradient(to right, rgb(73, 0, 0), maroon);
-  background: linear-gradient(to left, #a9abb8, #25274d);
-  background: linear-gradient(to left, #254e58, #112d32);
-  background: linear-gradient(to left, #5a5560, #46344e);
-  background: linear-gradient(to left, #49274a, #0e0a18);
-  background: linear-gradient(to left, #1a2930, #0e0b16);
+  background: #0e0a18;
   color: #fff;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   letter-spacing: 2px;
-  border-top: 3px solid rgb(73, 0, 0);
-  border-top: 3px solid #25274d;
-  border-top: 3px solid #112d32;
-  border-top: 3px solid #46344e;
-  border-top: 3px solid #0e0a18;
-  border-top: 3px solid #0e0b16;
-  border-bottom: 3px solid rgb(73, 0, 0);
-  border-bottom: 3px solid #25274d;
-  border-bottom: 3px solid #112d32;
-  border-bottom: 3px solid #46344e;
-  border-bottom: 3px solid #0e0a18;
-  border-bottom: 3px solid #0e0b16;
+  border-top: 3px solid #49274a;
+  border-bottom: 3px solid #49274a;
   padding: 0.5rem;
 }
 
@@ -80,13 +59,8 @@
 }
 
 .game .add-more {
-  background: linear-gradient(maroon, rgb(73, 0, 0));
-  background: rgba(37, 39, 77, 0.9);
-  background: rgba(17, 45, 50, 0.9);
-  background: rgba(70, 52, 78, 0.9);
-  background: rgb(14, 10, 24, 0.9);
-  background: linear-gradient(#1a2930, #0e0b16);
-  background: linear-gradient(rgba(26, 41, 48, 0.95), #0e0b16);
+  background: rgba(14, 10, 24, 0.95);
+
   position: absolute;
   top: 0rem;
   width: 100%;
@@ -128,20 +102,14 @@
 }
 
 .green {
-  /*background: green;
-  color: #fff;*/
   color: greenyellow;
 }
 
 .orange {
-  /*background: orange;
-  color: #fff;*/
   color: orange;
 }
 
 .red {
-  /*background: red;
-  color: #fff;*/
   color: red;
 }
 
