@@ -17,7 +17,7 @@ import { loadDetail } from '../../actions/detailAction'
 // Components
 import ImageSlider from '../ImageSlider/ImageSlider'
 
-const GameDetail = ({ pathId }) => {
+const GameDetail = () => {
   const dispatch = useDispatch()
 
   const { id } = useParams()
@@ -98,15 +98,12 @@ const GameDetail = ({ pathId }) => {
       )}
 
       {!isLoading && (
-        <motion.div
+        <div
           className='shadow'
           onClick={exitDetailHander}
           style={{ backgroundImage: `url(${game.background_image})` }}
         >
-          <motion.div
-            className={`${getByRating(game.rating)} detail`}
-            layoutId={pathId}
-          >
+          <div className={`${getByRating(game.rating)} detail`}>
             <div className='back-home'>
               {searched.length > 0 && term && (
                 <Link to='/search'>
@@ -143,9 +140,9 @@ const GameDetail = ({ pathId }) => {
                 </h2>
               </Link>
             </div>
-            <motion.div className='stats'>
+            <div className='stats'>
               <div className='rating'>
-                <motion.h2 layoutId={`title ${pathId}`}>{game.name}</motion.h2>
+                <h2>{game.name}</h2>
                 <h2>
                   Rating
                   <i
@@ -157,11 +154,11 @@ const GameDetail = ({ pathId }) => {
                 </h2>
               </div>
 
-              <motion.div className='info'>
+              <div className='info'>
                 {game.platforms && (
                   <>
                     <h2>Platforms</h2>
-                    <motion.div className='platforms'>
+                    <div className='platforms'>
                       {game.platforms.map(data => {
                         return (
                           <h2 key={data.platform.name}>
@@ -172,20 +169,19 @@ const GameDetail = ({ pathId }) => {
                           </h2>
                         )
                       })}
-                    </motion.div>
+                    </div>
                   </>
                 )}
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
-            <motion.div className='media'>
-              <motion.img
+            <div className='media'>
+              <img
                 className={getShadow(game.rating)}
-                layoutId={`image ${pathId}`}
                 src={smallImage(game.background_image, 1280)}
                 alt={game.background_image}
               />
-            </motion.div>
+            </div>
 
             <div className='genre'>
               <ul className='genre-list'>
@@ -203,7 +199,7 @@ const GameDetail = ({ pathId }) => {
               </ul>
             </div>
 
-            <motion.div className='description'>
+            <div className='description'>
               {game.description_raw && (
                 <>
                   <h2>Description</h2>
@@ -211,22 +207,34 @@ const GameDetail = ({ pathId }) => {
                     {!read && game.description_raw.substring(0, 250)}
 
                     {!read && game.description_raw.length > 250 && (
-                      <span onClick={() => setRead(true)}> read more...</span>
+                      <span
+                        onClick={() => setRead(true)}
+                        className={getByRatingId(game.rating)}
+                      >
+                        {' '}
+                        read more...
+                      </span>
                     )}
                     {read && game.description_raw}
 
                     {read && game.description_raw.length > 250 && (
-                      <span onClick={() => setRead(false)}> hide more</span>
+                      <span
+                        onClick={() => setRead(false)}
+                        className={getByRatingId(game.rating)}
+                      >
+                        {' '}
+                        hide more
+                      </span>
                     )}
                   </p>
                 </>
               )}
-            </motion.div>
+            </div>
 
             <div className='gallery'>
               {screen.results.length > 0 && (
                 <>
-                  <h2>Scrrenshots</h2>
+                  <h2>Screenshots</h2>
                   <ImageSlider
                     screen={screen}
                     getShadow={getShadow}
@@ -236,8 +244,8 @@ const GameDetail = ({ pathId }) => {
                 </>
               )}
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
     </>
   )
