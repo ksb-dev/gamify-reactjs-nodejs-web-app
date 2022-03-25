@@ -121,7 +121,7 @@ const GameDetail = () => {
         >
           <div className={`${getByRating(game.rating)} detail`}>
             <div className='back-home'>
-              {searched.length > 0 && term && (
+              {/*{searched.length > 0 && term && (
                 <Link to='/search'>
                   <h2>
                     <i className='fa-solid fa-arrow-left'></i>
@@ -135,7 +135,13 @@ const GameDetail = () => {
                     <i className='fa-solid fa-magnifying-glass'></i>
                   </h2>
                 </Link>
-              )}
+              )}*/}
+
+              <Link to='/search'>
+                <h2>
+                  <i className='fa-solid fa-magnifying-glass'></i>
+                </h2>
+              </Link>
 
               {game.website && (
                 <a

@@ -143,14 +143,14 @@
 
 .shadow .detail .website {
   text-decoration: none;
-  color: tomato;
+  color: #fff;
 }
 
 .shadow .detail .website h1 {
   margin: 0;
 }
 .shadow .detail .website h1 i {
-  animation: animate 5s linear infinite;
+  /*animation: animate 5s linear infinite;*/
 }
 
 @keyframes animate {
@@ -209,6 +209,7 @@
   cursor: pointer;
   margin-left: 0.5rem;
   border-radius: 10px;
+  padding: 0 0.5rem;
 }
 
 .shadow .detail .gallery {
@@ -216,7 +217,7 @@
 }
 
 .shadow .detail .gallery h2 {
-  margin: 5rem 0;
+  margin: 2rem 0 2rem 0;
 }
 
 ::-webkit-scrollbar {
@@ -325,7 +326,7 @@
   }
 
   .shadow .detail .description {
-    margin: 1rem 0rem;
+    margin: 1rem 0rem 5rem 0;
     padding: 0;
     background: transparent;
   }
@@ -342,7 +343,7 @@
 
 @media screen and (max-width: 640px) {
   .shadow .detail .description {
-    margin: 0rem 0rem;
+    margin: 0rem 0rem 5rem 0;
   }
 
   .shadow .detail .description p {
@@ -372,15 +373,15 @@
 }
 
 .greenShad {
-  box-shadow: 0 0 20px #fff;
+  box-shadow: 0 0 50px greenyellow;
 }
 
 .orangeShad {
-  box-shadow: 0 0 20px #fff;
+  box-shadow: 0 0 50px orange;
 }
 
 .redShad {
-  box-shadow: 0 0 20px #fff;
+  box-shadow: 0 0 50px tomato;
 }
 
 #green {
