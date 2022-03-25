@@ -1,6 +1,11 @@
 import React, { useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+import { useDispatch } from 'react-redux'
+
+// Actions
+//import { loadPopular, loadUpcoming, loadNew } from '../../actions/gamesAction'
+
 // Images
 import joy from '../../img/joy8.jpg'
 
@@ -9,6 +14,7 @@ import './Header.css'
 
 const Header = ({ setCategory, sideMenu }) => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const img = useRef(null)
   const cover = useRef(null)
@@ -23,14 +29,17 @@ const Header = ({ setCategory, sideMenu }) => {
 
     if (value === 'popular') {
       setCategory('popular')
+      //dispatch(loadPopular())
       navigate('/')
     }
     if (value === 'upcoming') {
       setCategory('upcoming')
+      //dispatch(loadUpcoming())
       navigate('/')
     }
     if (value === 'new') {
       setCategory('new')
+      //dispatch(loadNew())
       navigate('/')
     }
   }

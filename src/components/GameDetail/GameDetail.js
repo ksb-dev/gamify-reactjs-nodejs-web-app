@@ -14,6 +14,9 @@ import { smallImage } from '../../util'
 // Actions
 import { loadDetail } from '../../actions/detailAction'
 
+// Components
+import ImageSlider from '../ImageSlider/ImageSlider'
+
 const GameDetail = ({ pathId }) => {
   const dispatch = useDispatch()
 
@@ -201,7 +204,7 @@ const GameDetail = ({ pathId }) => {
             </div>
 
             <motion.div className='description'>
-              {game.description && (
+              {game.description_raw && (
                 <>
                   <h2>Description</h2>
                   <p>
@@ -224,14 +227,12 @@ const GameDetail = ({ pathId }) => {
               {screen.results.length > 0 && (
                 <>
                   <h2>Scrrenshots</h2>
-                  {screen.results.map(screen => (
-                    <img
-                      className={getShadow(game.rating)}
-                      src={smallImage(screen.image, 1280)}
-                      key={screen.id}
-                      alt={screen.image}
-                    />
-                  ))}
+                  <ImageSlider
+                    screen={screen}
+                    getShadow={getShadow}
+                    smallImage={smallImage}
+                    game={game}
+                  />
                 </>
               )}
             </div>

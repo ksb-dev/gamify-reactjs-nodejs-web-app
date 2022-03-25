@@ -202,11 +202,6 @@
   margin: 2rem 0;
 }
 
-.shadow .detail .gallery img {
-  margin-bottom: 5rem;
-  border-radius: 5px;
-}
-
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -220,7 +215,6 @@
 @media screen and (max-width: 1024px) {
   .shadow .detail .stats .rating h2,
   .shadow .detail .description h2,
-  .shadow .detail .gallery h2,
   .shadow .detail .stats .info .platforms h2,
   .shadow .detail .stats .info h2 {
     font-size: 1rem;
@@ -234,6 +228,10 @@
 
   .shadow .detail .stats .info .platforms h2 i {
     margin-right: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .shadow .detail .gallery h2 {
     font-size: 1rem;
   }
 }
@@ -293,10 +291,6 @@
     font-size: 0.7rem;
   }
 
-  .shadow .detail .gallery img {
-    margin-bottom: 2rem;
-  }
-
   .shadow .detail .website h1 {
     font-size: 1.5rem;
   }
@@ -325,9 +319,9 @@
 
   .shadow .detail .stats .rating h2,
   .shadow .detail .description h2,
-  .shadow .detail .gallery h2,
   .shadow .detail .stats .info .platforms h2,
-  .shadow .detail .stats .info h2 {
+  .shadow .detail .stats .info h2,
+  .shadow .detail .gallery h2 {
     font-size: 0.8rem;
   }
 }
