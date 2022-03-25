@@ -70,6 +70,7 @@
   background: #fff;
   margin: 0 0.5rem;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .dot.active {
