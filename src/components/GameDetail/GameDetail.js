@@ -97,6 +97,12 @@ const GameDetail = () => {
     else return 'redName'
   }
 
+  const getRead = rating => {
+    if (rating > 4) return 'greenRead'
+    else if (rating > 3) return 'orangeRead'
+    else return 'redRead'
+  }
+
   return (
     <>
       {isLoading && (
@@ -251,10 +257,10 @@ const GameDetail = () => {
                     {!read && game.description_raw.length > 250 && (
                       <span
                         onClick={() => setRead(true)}
-                        className={getByRatingId(game.rating)}
+                        className={getRead(game.rating)}
                       >
                         {' '}
-                        read more...
+                        read more
                       </span>
                     )}
                     {read && game.description_raw}
@@ -262,7 +268,7 @@ const GameDetail = () => {
                     {read && game.description_raw.length > 250 && (
                       <span
                         onClick={() => setRead(false)}
-                        className={getByRatingId(game.rating)}
+                        className={getRead(game.rating)}
                       >
                         {' '}
                         hide more
