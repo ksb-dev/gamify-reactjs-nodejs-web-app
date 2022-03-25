@@ -63,6 +63,8 @@ const GameDetail = () => {
   //Data
   const { screen, game, isLoading, genre } = useSelector(state => state.detail)
 
+  console.log(game)
+
   const { searched, term } = useSelector(state => state.games)
 
   const getByRating = rating => {
@@ -89,6 +91,12 @@ const GameDetail = () => {
     else return 'redGenre'
   }
 
+  const getNameColor = rating => {
+    if (rating > 4) return 'greenName'
+    else if (rating > 3) return 'orangeName'
+    else return 'redName'
+  }
+
   return (
     <>
       {isLoading && (
@@ -101,7 +109,9 @@ const GameDetail = () => {
         <div
           className='shadow'
           onClick={exitDetailHander}
-          style={{ backgroundImage: `url(${game.background_image})` }}
+          style={{
+            backgroundImage: `url(${game.background_image})`
+          }}
         >
           <div className={`${getByRating(game.rating)} detail`}>
             <div className='back-home'>
@@ -129,7 +139,7 @@ const GameDetail = () => {
                   rel='noreferrer'
                 >
                   <h1>
-                    <i class='fa-solid fa-earth-americas'></i>
+                    <i className='fa-solid fa-earth-americas'></i>
                   </h1>
                 </a>
               )}
@@ -143,16 +153,46 @@ const GameDetail = () => {
 
             <div className='stats'>
               <div className='rating'>
-                <h2>{game.name}</h2>
-                <h2>
-                  Rating
-                  <i
-                    className='fa-solid fa-star'
-                    id={getByRatingId(game.rating)}
-                  >
-                    {game.rating}
-                  </i>
-                </h2>
+                {game.name && (
+                  <h2 className={`${getNameColor(game.rating)} + title`}>
+                    {game.name}
+                  </h2>
+                )}
+
+                {game.rating && (
+                  <h2>
+                    rating
+                    <span id={getByRatingId(game.rating)}> {game.rating}</span>
+                  </h2>
+                )}
+
+                {game.released && (
+                  <h2>
+                    released
+                    <span id={getByRatingId(game.rating)}>
+                      {' '}
+                      {game.released}
+                    </span>
+                  </h2>
+                )}
+
+                {game.developers && game.developers[0] && (
+                  <h2>
+                    developers
+                    <span id={getByRatingId(game.rating)}>
+                      {game.developers[0].name}
+                    </span>
+                  </h2>
+                )}
+
+                {game.publishers && game.publishers[0] && (
+                  <h2>
+                    publishers
+                    <span id={getByRatingId(game.rating)}>
+                      {game.publishers[0].name}
+                    </span>
+                  </h2>
+                )}
               </div>
 
               <div className='info'>
@@ -185,6 +225,7 @@ const GameDetail = () => {
                     </div>*/}
 
             <div className='genre'>
+              <h2>genre </h2>
               <ul className='genre-list'>
                 {genre.genres.length > 0 &&
                   genre.genres.map(data => {

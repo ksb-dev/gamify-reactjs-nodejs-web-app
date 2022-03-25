@@ -19,8 +19,6 @@ const Home = () => {
     JSON.parse(localStorage.getItem('cat'))
   )
 
-  console.log(category)
-
   const sideMenu = useRef(null)
 
   const dispatch = useDispatch()
