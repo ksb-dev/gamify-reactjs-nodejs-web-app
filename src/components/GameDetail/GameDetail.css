@@ -311,7 +311,7 @@
 
   .shadow .detail .description p {
     line-height: 1.4rem;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   .shadow .detail .stats .rating h2,
@@ -360,19 +360,19 @@
 }
 
 .greenGenre {
-  background: greenyellow;
-  color: #0e0a18;
+  color: greenyellow;
+  border: 2px solid greenyellow;
   font-weight: bold;
 }
 
 .orangeGenre {
-  background: orange;
-  color: #0e0a18;
+  color: orange;
+  border: 2px solid orange;
   font-weight: bold;
 }
 
 .redGenre {
-  background: tomato;
-  color: #0e0a18;
+  color: tomato;
+  border: 2px solid tomato;
   font-weight: bold;
 }
