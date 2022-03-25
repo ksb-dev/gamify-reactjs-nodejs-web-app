@@ -1,6 +1,7 @@
 .container-slider {
   width: 100%;
-  min-height: 600px;
+  height: 100%;
+  min-height: 500px;
   margin: 100px auto 0;
   position: relative;
   overflow: hidden;
@@ -8,10 +9,7 @@
 
 .slide {
   width: 100%;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
   position: absolute;
   opacity: 0;
   transition: opacity ease-in-out 0.4s;
@@ -20,9 +18,6 @@
 .slide img {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   object-fit: cover;
 }
 
@@ -97,10 +92,6 @@
     min-height: 400px;
   }
 
-  .slide {
-    min-height: 400px;
-  }
-
   .btn-slide {
     width: 30px;
     height: 30px;
@@ -124,10 +115,6 @@
 @media screen and (max-width: 786px) {
   .container-slider {
     margin: 1rem 0rem;
-    min-height: 300px;
-  }
-
-  .slide {
     min-height: 300px;
   }
 
@@ -158,10 +145,6 @@
 @media screen and (max-width: 640px) {
   .container-slider {
     margin: 1rem 0rem;
-    min-height: 200px;
-  }
-
-  .slide {
     min-height: 200px;
   }
 
