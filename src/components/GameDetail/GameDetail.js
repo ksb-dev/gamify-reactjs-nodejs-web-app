@@ -140,6 +140,7 @@ const GameDetail = () => {
                 </h2>
               </Link>
             </div>
+
             <div className='stats'>
               <div className='rating'>
                 <h2>{game.name}</h2>
@@ -175,13 +176,13 @@ const GameDetail = () => {
               </div>
             </div>
 
-            <div className='media'>
+            {/*<div className='media'>
               <img
                 className={getShadow(game.rating)}
                 src={smallImage(game.background_image, 1280)}
                 alt={game.background_image}
               />
-            </div>
+                    </div>*/}
 
             <div className='genre'>
               <ul className='genre-list'>
