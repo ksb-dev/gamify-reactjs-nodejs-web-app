@@ -6,21 +6,22 @@
   top: 0;
   left: 0;
   z-index: 5;
+  background: #000;
 }
 
 .shadow .detail {
-  border-radius: 1rem;
   padding: 2rem 5rem;
   background: linear-gradient(to left, #49274a, #0e0a18);
   background: linear-gradient(
     to right,
-    rgba(73, 39, 74, 0.95),
-    rgba(14, 10, 24, 0.95)
+    rgba(73, 39, 74, 0.9),
+    rgba(14, 10, 24, 0.9)
   );
+
   position: absolute;
-  top: 5rem;
-  left: 5rem;
-  right: 5rem;
+  top: 0rem;
+  left: 0rem;
+  right: 0rem;
   color: #fff;
   z-index: 10;
   min-height: 100vh;
@@ -239,10 +240,6 @@
 @media screen and (max-width: 786px) {
   .shadow .detail {
     padding: 1rem 2rem;
-    top: 0rem;
-    left: 0rem;
-    right: 0rem;
-    border-radius: unset;
   }
 
   .shadow .detail .back-home a h2 {
@@ -327,27 +324,27 @@
 }
 
 .greenShadow {
-  box-shadow: 50px 50px 200px greenyellow;
+  box-shadow: 50px 50px 200px transparent;
 }
 
 .orangeShadow {
-  box-shadow: 50px 50px 200px orange;
+  box-shadow: 50px 50px 200px transparent;
 }
 
 .redShadow {
-  box-shadow: 50px 50px 200px red;
+  box-shadow: 50px 50px 200px transparent;
 }
 
 .greenShad {
-  box-shadow: 0 0 50px greenyellow;
+  box-shadow: 0 0 20px #fff;
 }
 
 .orangeShad {
-  box-shadow: 0 0 50px orange;
+  box-shadow: 0 0 20px #fff;
 }
 
 .redShad {
-  box-shadow: 0 0 50px red;
+  box-shadow: 0 0 20px #fff;
 }
 
 #green {

@@ -22,6 +22,7 @@
 
 .active-anim {
   opacity: 1;
+  transform: all 0.3s ease;
 }
 
 .btn-slide {
