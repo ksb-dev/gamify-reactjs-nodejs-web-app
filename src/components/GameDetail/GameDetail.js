@@ -222,6 +222,20 @@ const GameDetail = () => {
               </div>
             </div>
 
+            <div className='gallery'>
+              {screen.results.length > 0 && (
+                <>
+                  <h2>Screenshots</h2>
+                  <ImageSlider
+                    screen={screen}
+                    getShadow={getShadow}
+                    smallImage={smallImage}
+                    game={game}
+                  />
+                </>
+              )}
+            </div>
+
             {/*<div className='media'>
               <img
                 className={getShadow(game.rating)}
@@ -275,20 +289,6 @@ const GameDetail = () => {
                       </span>
                     )}
                   </p>
-                </>
-              )}
-            </div>
-
-            <div className='gallery'>
-              {screen.results.length > 0 && (
-                <>
-                  <h2>Screenshots</h2>
-                  <ImageSlider
-                    screen={screen}
-                    getShadow={getShadow}
-                    smallImage={smallImage}
-                    game={game}
-                  />
                 </>
               )}
             </div>
