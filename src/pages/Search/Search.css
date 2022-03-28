@@ -23,15 +23,16 @@
 
 .home-search a h2 {
   margin: 0;
-  text-shadow: 0 0 10px #fff;
+  /*text-shadow: 0 0 10px #fff;*/
 }
 
 .home-search form input {
   width: 300px;
   padding: 0.5rem;
-  border-radius: 50px;
   border: none;
-  box-shadow: 0 0 10px #49274a;
+  background: transparent;
+  color: #fff;
+  border-bottom: 3px solid #fff;
 }
 
 .home-search form input:focus {
@@ -46,8 +47,8 @@
   font-family: 'Cinzel Decorative', cursive;
   letter-spacing: 2px;
   font-weight: bold;
-  padding-left: 1rem;
-  color: #49274a;
+  padding-left: 0rem;
+  color: #fff;
 }
 
 @media screen and (max-width: 786px) {

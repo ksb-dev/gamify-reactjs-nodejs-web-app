@@ -1,6 +1,5 @@
 .side-menu {
   background: rgba(14, 10, 24, 0.95);
-  background: rgba(73, 39, 74, 0.95);
   position: fixed;
   top: 0;
   width: 100vw;
@@ -11,11 +10,6 @@
 }
 
 .side-menu .menu {
-  background: linear-gradient(
-    to left,
-    rgba(14, 10, 24, 1),
-    rgba(73, 39, 74, 0)
-  );
   position: fixed;
   right: 0;
   top: 0;

@@ -6,7 +6,7 @@ import './ImageSlider.css'
 
 const ImageSlider = ({ screen, getShadow, smallImage, game }) => {
   const [slideIndex, setSlideIndex] = useState(1)
-  const [start, setStart] = useState(false)
+  //const [start, setStart] = useState(false)
 
   const nextSlide = () => {
     if (slideIndex !== screen.results.length) {
@@ -29,7 +29,7 @@ const ImageSlider = ({ screen, getShadow, smallImage, game }) => {
   }
 
   return (
-    <div className={`${getShadow(game.rating)} + container-slider`}>
+    <div className='container-slider'>
       {screen.results.map((screen, index) => {
         return (
           <div

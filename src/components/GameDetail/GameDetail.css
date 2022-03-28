@@ -11,13 +11,7 @@
 
 .shadow .detail {
   padding: 2rem 5rem;
-  background: linear-gradient(to left, #49274a, #0e0a18);
-  background: linear-gradient(
-    to left,
-    rgba(73, 39, 74, 0.9),
-    rgba(14, 10, 24, 0.9)
-  );
-
+  background: rgba(14, 10, 24, 0.9);
   position: absolute;
   top: 0rem;
   left: 0rem;
@@ -37,7 +31,7 @@
 .shadow .detail .back-home a h2 {
   display: inline-block;
   color: #fff;
-  text-shadow: 0 0 10px #fff;
+  /*text-shadow: 0 0 10px #fff;*/
 }
 
 .shadow .detail .back-home a h2:hover {
@@ -416,17 +410,17 @@
 
 .greenName {
   color: greenyellow;
-  text-shadow: 0 0 10px greenyellow;
+  text-shadow: 2px 2px 5px greenyellow;
 }
 
 .orangeName {
   color: orange;
-  text-shadow: 0 0 10px orange;
+  text-shadow: 2px 2px 5px orange;
 }
 
 .redName {
   color: tomato;
-  text-shadow: 0 0 10px tomato;
+  text-shadow: 2px 2px 5px tomato;
 }
 
 .greenRead {

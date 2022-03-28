@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 //Styling and Animation
-import { motion } from 'framer-motion'
+//import { motion } from 'framer-motion'
 import './GameDetail.css'
 
 //Redux
@@ -63,9 +63,9 @@ const GameDetail = () => {
   //Data
   const { screen, game, isLoading, genre } = useSelector(state => state.detail)
 
-  console.log(game)
+  //console.log(game)
 
-  const { searched, term } = useSelector(state => state.games)
+  //const { searched, term } = useSelector(state => state.games)
 
   const getByRating = rating => {
     if (rating > 4) return 'greenShadow'
