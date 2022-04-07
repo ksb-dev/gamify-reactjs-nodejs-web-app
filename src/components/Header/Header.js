@@ -1,8 +1,6 @@
 import React, { useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-import { useDispatch } from 'react-redux'
-
 // Actions
 //import { loadPopular, loadUpcoming, loadNew } from '../../actions/gamesAction'
 
@@ -14,7 +12,6 @@ import './Header.css'
 
 const Header = ({ setCategory, sideMenu }) => {
   const navigate = useNavigate()
-  const dispatch = useDispatch()
 
   const img = useRef(null)
   const cover = useRef(null)
